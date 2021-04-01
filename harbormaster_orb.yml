@@ -1,0 +1,92 @@
+# This code is licensed from CircleCI to the user under the MIT license. See
+# https://circleci.com/orbs/registry/licensing for details.
+version: 2.1
+
+description: |
+  A CircleCI Orb to invoke the Harbormaster platform to generate fully functioning and deployable 
+  projects from a single "as-code" YAML file. The result is an MVP quality applications based on a 
+  single business model and one of the many supported technology stacks.
+  
+  Model format support includes:
+  YAML, JSON, UML, XMI, Eclipse Model Framework, Java source code in a GIT repo, and SQL Scripts.  
+  
+  Supported technology stacks include:
+  Apollo, Angular7, Django, Spring Boot, AWS Lambda, 
+  Google Functions, ASP.NET, Spark Microweb and Struts2. 
+  
+  More details and example files can be found at 
+  
+  https://github.com/Harbormaster-AI/circle.ci.orb
+ 
+commands:
+
+  initialize:
+    description: |
+      Command to initialize the Harbormaster orb by providing your
+      API token. This token is obtained from your online account 
+      under User Preferences access on http://platform.harbormaster.com. The source for this Orb is available 
+      at https://github.com/Harbormaster-AI/circle.ci.orb/harbormaster_orb.yaml.
+    parameters:
+      api-token:
+        description: "A user's Harbormaster API token"
+        type: env_var_name
+      harbormaster-url:
+        description: "The URL of the Harbormaster instance to connect to.  Leave blank if using the Harbormaster SaaS instance"
+        type: env_var_name
+      
+    steps:
+#######################################################################
+## checkout the relevant files to a directory referenced by
+## ${CIRCLE_PROJECT_REPONAME}
+#######################################################################
+      - checkout:
+          path: "~/${CIRCLE_PROJECT_REPONAME}"
+
+      - run:
+          name: print environmental variables
+          command: printenv
+          
+      - run:                                                    
+          name: update npm
+          command: '[ $EUID == 0 ] && SUDO="" || SUDO=sudo && $SUDO npm install -g npm@latest' 
+
+      - run:                                                    
+          name: install npm-run
+          command: '[ $EUID == 0 ] && SUDO="" || SUDO=sudo && $SUDO npm install -g npm-run@latest'    
+          
+      - run:                                 
+          name: install Harbormaster command line interface (CLI)
+          command: '[ $EUID == 0 ] && SUDO="" || SUDO=sudo && $SUDO npm install -g harbormaster_ai'
+          
+      - run:
+          name: initialize user for Harbormaster
+          command: '[ $EUID == 0 ] && SUDO="" || SUDO=sudo && $SUDO npm-run harbormaster_ai init << parameters.api-token >> << parameters.harbormaster-url >>'
+
+      - run: 
+          name: update the apt-get package index
+          command: '[ $EUID == 0 ] && SUDO="" || SUDO=sudo && $SUDO apt-get update'
+
+      - run: 
+          name: install dos2unix to convert uploaded files
+          command: '[ $EUID == 0 ] && SUDO="" || SUDO=sudo && $SUDO apt-get install -y dos2unix'
+
+  generate_devops_project:
+    description: |
+      Command to generate a DevOps project by providing a Project-as-Code YAML generation file
+    parameters:
+      generation-yaml-file:
+        description: "Project-as-Code YAML file containing the project generation directives"
+        type: string
+        default: "${GENERATION_YAML_FILE}"
+        
+    steps:
+      
+#######################################################################
+## call the Harbormaster CLI to generate the application
+#######################################################################      
+      - run:
+          name: Generating project
+          command: '[ $EUID == 0 ] && SUDO="" || SUDO=sudo && $SUDO harbormaster_ai project_generate ~/${CIRCLE_PROJECT_REPONAME}/<< parameters.generation-yaml-file >>'
+
+
+  
