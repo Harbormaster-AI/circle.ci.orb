@@ -4,8 +4,10 @@
 
 The Harbormaster Orb is a simple, yet powerful way to leverage CircleCI to automate the generation of DevOps projects to produce fully functional applications that can be deployed to, tested, and run through your CircleCI pipeline.  Choose from a growing set of tech stacks.
 
-#### High Level Overview
+## High Level Overview
 ![alt text](http://harbormaster.ai/wp-content/uploads/2021/04/harbormaster-orb-how-it-works.png)
+
+## Orb Declarations
 
 #### Version
     version: 2.1
@@ -59,7 +61,7 @@ During the first run of a build, from time to time the following issues has been
 The problem appears to be quickly fixed if the config.yml file in the repository is touched (e.g. by making a whitespace only change).
 [Read more](https://discuss.circleci.com/t/if-you-expected-a-workflow-to-run-check-your-config-contains-a-top-level-key-called-workflows/16798) in this related CircleCI thread
 
-#### Stack Specific Examples
+#### Tech Stack Specific Examples
 
 #### Angular7          
       - harbormaster/generate_devops_project:

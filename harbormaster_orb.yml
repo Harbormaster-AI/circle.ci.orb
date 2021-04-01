@@ -4,13 +4,13 @@ version: 2.1
 
 description: |
   A CircleCI Orb to invoke the Harbormaster platform to generate fully functioning and deployable 
-  projects from a single "as-code" YAML file. The result is an MVP quality applications based on a 
+  projects from a single "project-as-code" YAML file. The result is an MVP quality applications based on a 
   single business model and one of the many supported technology stacks.
   
   Model format support includes:
   YAML, JSON, UML, XMI, Eclipse Model Framework, Java source code in a GIT repo, and SQL Scripts.  
   
-  Supported technology stacks include:
+  Growing list of tech stacks include:
   Apollo, Angular7, Django, Spring Boot, AWS Lambda, 
   Google Functions, ASP.NET, Spark Microweb and Struts2. 
   
@@ -74,19 +74,18 @@ commands:
     description: |
       Command to generate a DevOps project by providing a Project-as-Code YAML generation file
     parameters:
-      generation-yaml-file:
+      project-as-code-yaml-file:
         description: "Project-as-Code YAML file containing the project generation directives"
         type: string
-        default: "${GENERATION_YAML_FILE}"
+        default: "${PROJECT_AS_CODE_YAML_FILE}"
         
     steps:
-      
 #######################################################################
 ## call the Harbormaster CLI to generate the application
 #######################################################################      
       - run:
           name: Generating project
-          command: '[ $EUID == 0 ] && SUDO="" || SUDO=sudo && $SUDO harbormaster_ai project_generate ~/${CIRCLE_PROJECT_REPONAME}/<< parameters.generation-yaml-file >>'
+          command: '[ $EUID == 0 ] && SUDO="" || SUDO=sudo && $SUDO harbormaster_ai project_generate ~/${CIRCLE_PROJECT_REPONAME}/<< parameters.project-as-code-yaml-file >>'
 
 
   
