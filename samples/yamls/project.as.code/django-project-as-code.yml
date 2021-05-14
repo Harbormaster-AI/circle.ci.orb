@@ -15,13 +15,13 @@ project:
     name: Django 2.2 Demo
     description: Sample Django 2.2 using Python 3.7 project
     techstack:
-        id:               Django                          
+        name:             Django                          
                           # To see the list of available tech stacks on a Harbormaster instance use command:
                           #     harbormaster_cli stack_list --output pretty
 
     model:
-        identifier:       255
-                          # options:     Unique id of an existing model, a URL to a model file or Git repo, 
+        name:             bowling-league-Sprint-1
+                          # options:     Unique name of an existing model, a URL to a model file or Git repo, 
                           #                or full/relative path to a model file.
                           #
                           # To see the list of supported model types use command:
@@ -31,9 +31,9 @@ project:
                           #      harbormaster_cli model_list --output pretty
                           # 
                           # For JAR files and Git Repos with Java Files, include the root package names of the root package
-        javaRootPackageNames:
-          - com.freeport.bo    
-        primaryKeyPattern: _pojoName_Id # the pattern to look for when interrogating a POJO for a primary key field
+#        javaRootPackageNames:
+#          - com.freeport.bo    
+#        primaryKeyPattern: _pojoName_Id # the pattern to look for when interrogating a POJO for a primary key field
                               # allowed values are a either a literal, ex: id OR 
                               # POJOName with a suffix, ex: _pojoName_Id will handle accountId, customerId, etc...                 
 
@@ -67,7 +67,7 @@ project:
             orgName:      xxxxxxxxxx
             repo:         djangodemo
             tag:          latest
-             
+            host:         #empty uses docker hubd default             
              
 #
 # resources: Apply your own resources (files) to a project generation session.  The file name applied
@@ -87,7 +87,7 @@ project:
         cicd:
             platform: aws         # options:  codeship, circleci, jfrog.pipelines
                                   #           jenkins, azure, aws, gitlab, 
-                                  #           bitbucket, buddy, semaphore
+                                  #           bitbucket, github
             #AES key: 474KlMLItly26VT2V5E02xWEYNODaJ2VDA7HMdSR6cI=                          
                                    # codeship project key; ex: XKyy2IDcSptIIvMY8KLMVMcxVs+ZK6AyNu1B4Wu1DPY=
 

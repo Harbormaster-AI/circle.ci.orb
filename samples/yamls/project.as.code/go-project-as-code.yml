@@ -16,31 +16,32 @@ project:
     description: Sample Golang project
     techstack:
         name:             .go.tech.stack                          
-                           # To see the list of available tech stacks on a Harbormaster instance use command:
-                           #     harbormaster_cli stack_list --output pretty
+                          # To see the list of available tech stacks on a Harbormaster instance use command:
+                          #     harbormaster_cli stack_list --output pretty
 
     model:
         name:             bowling-league-Sprint-1
-                           # options:     Unique name of an existing model, a URL to a model file or Git repo, 
-                           #                or full/relative path to a model file.
-                           #
-                           # To see the list of supported model types use command:
-                           #      harbormaster_cli model_types_supported
-                           #                          
-                           # To see the list of available models on a Harbormaster instance use command:
-                           #      harbormaster_cli model_list --output pretty
-                           # 
-                           # For JAR files and Git Repos with Java Files, include the root package names of the root package
-#            javaRootPackageNames:
-#              - com.freeport.bo    
-#            primaryKeyPattern: _pojoName_Id 
-                               # the pattern to look for when interrogating a POJO for a primary key field
-                               # allowed values are a either a literal, ex: id OR 
-                           # POJOName with a suffix, ex: _pojoName_Id will handle accountId, customerId, etc...                 
+                          # options:     Unique name of an existing model, a URL to a model file or Git repo, 
+                          #                or full/relative path to a model file.
+                          #
+                          # To see the list of supported model types use command:
+                          #      harbormaster_cli model_types_supported
+                          #                          
+                          # To see the list of available models on a Harbormaster instance use command:
+                          #      harbormaster_cli model_list --output pretty
+                          # 
+                          # For JAR files and Git Repos with Java Files, include the root package names of the root package
+#        javaRootPackageNames:
+#          - com.freeport.bo    
+#        primaryKeyPattern: _pojoName_Id # the pattern to look for when interrogating a POJO for a primary key field
+                              # allowed values are a either a literal, ex: id OR 
+                              # POJOName with a suffix, ex: _pojoName_Id will handle accountId, customerId, etc...                 
+
 #
 # DevOps Project Creation Options
 #    	
     options:
+
 #            
 # Application parameters
 #            
@@ -61,10 +62,10 @@ project:
 #            
         docker:
             inUse:        true
-            userName:     tylertravismya
-            password:     69cutlass
-            orgName:      theharbormaster
-            repo:         golangdemo
+            userName:     xxxxxxxxxxx
+            password:     xxxxxxxxxxx
+            orgName:      xxxxxxxxxx
+            repo:         djangodemo
             tag:          latest
             host:         #empty uses docker hubd default             
              
@@ -84,10 +85,10 @@ project:
 # CI/CD parameters
 #            
         cicd:
-            platform: circleci,github,jfrog.pipelines    # options:  codeship, circleci, jfrog.pipelines
+            platform: circleci    # options:  codeship, circleci, jfrog.pipelines
                                   #           jenkins, azure, aws, gitlab, 
                                   #           bitbucket, github
-            #AES key: 474KlMLItly26VT2V5E02xWEYNODaJ2VDA7HMdSR6cI=                          
+            #AES key: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx                          
                                    # codeship project key; ex: XKyy2IDcSptIIvMY8KLMVMcxVs+ZK6AyNu1B4Wu1DPY=
 
 #
@@ -95,9 +96,9 @@ project:
 #
         git:            
             name:        git_test_go 
-            username:    complexmathguy
-            password:    00Corvette!!
-            repository:  golangdemo
+            username:    xxxxxxxxx
+            password:    xxxxxxxxx
+            repository:  myapp
             tag:         latest
             host:        github.com            
            
@@ -108,12 +109,11 @@ project:
            appPort:        8088
            dbType:         mysql #options: mysql,postgres,sqlite,sqlserver
            dbUserName:     root
-           dbPassword:     6969Cutlass!!00Corvette!!
-           dbName:         appdb
-           dbHost:         localhost
+           dbPassword:     letmein2
+           dbName:         appDB
+           dbHost:         127.0.0.1
            dbPort:         3306
-           dbArgs:         charset=utf8&parseTime=True&loc=Local
-           dbDisableForeignKeyConstraintWhenMigrating: true
+           dbArgs:         charset=utf8mb4&parseTime=True&loc=Local&createDatabaseIfNotExist=true&autoReconnect=true&useSSL=false&allowPublicKeyRetrieval=true
 #            
 # Artifact repository for build dependencies and binaries            
 #

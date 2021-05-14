@@ -15,23 +15,26 @@ project:
     name: Spring Core NoSQL Demo
     description: Sample Spring Core MongoDB project      
     techstack:
-       id:                SpringMongoDB  
+       name:                SpringMongoDB  
                                            # To see the list of available tech stacks on a Harbormaster instance using command:
                                            #     harbormaster_cli stack_list --output pretty
 
-    model:
-        identifier:        255
-                                      # options:     Unique name or id of an existing model or 
-                                      #              full or relative path to a model file of a supported type
-                                      #
-                                      # To see the list of supported model types use command:
-                                      #      harbormaster_cli model_types_supported
-                                      #                          
-                                      # To see the list of available model on a Harbormaster instance using command:
-                                      #      harbormaster_cli model_list --output pretty
-                                      #
-                                      # If using a JAR/EAR file not already published, must include the package name
-#      javaRootPackageName:   com.acme.pojo                                      
+       name:             bowling-league-Sprint-1
+                          # options:     Unique name of an existing model, a URL to a model file or Git repo, 
+                          #                or full/relative path to a model file.
+                          #
+                          # To see the list of supported model types use command:
+                          #      harbormaster_cli model_types_supported
+                          #                          
+                          # To see the list of available models on a Harbormaster instance use command:
+                          #      harbormaster_cli model_list --output pretty
+                          # 
+                          # For JAR files and Git Repos with Java Files, include the root package names of the root package
+#        javaRootPackageNames:
+#          - com.freeport.bo    
+#        primaryKeyPattern: _pojoName_Id # the pattern to look for when interrogating a POJO for a primary key field
+                              # allowed values are a either a literal, ex: id OR 
+                              # POJOName with a suffix, ex: _pojoName_Id will handle accountId, customerId, etc...                 
 
 #
 # DevOps Project Creation Options
@@ -61,7 +64,7 @@ project:
             orgName:      xxxxxxxxxx
             repo:         springbootmongodbdemo
             tag:          latest
-             
+            host:         #empty uses docker hubd default             
              
 #            
 # CI/CD parameters
@@ -69,7 +72,7 @@ project:
         cicd:
             platform:  codeship    # options:  codeship, circleci, jfrog.pipelines
                                    #           jenkins, azure, aws, gitlab, 
-                                   #           bitbucket, buddy, semaphore
+                                   #           bitbucket, github
             AES key:               # codeship project key; ex: XKyy2IDcSptIIvMY8KLMVMcxVs+ZK6AyNu1B4Wu1DPY=
 
 
@@ -82,7 +85,7 @@ project:
             password:    xxxx
             repository:  Spring
             tag:         latest
-            host:		 bitbucket.org            
+            host:        bitbucket.org            
 
 #
 # HashiCorp Terraform parameters
