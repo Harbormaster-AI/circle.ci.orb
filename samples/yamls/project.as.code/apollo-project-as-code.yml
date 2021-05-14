@@ -18,12 +18,12 @@ project:
     description: Sample Apollog GraphQL project
      
     techstack:
-       name:                Apollo      
-                                      # To see the list of available tech stacks on a Harbormaster instance using command:
-                                      #     harbormaster_cli stack_list --output pretty
+       name:             Apollo      
+                         # To see the list of available tech stacks on a Harbormaster instance using command:
+                         #     harbormaster_cli stack_list --output pretty
 
     model:
-        name:             ./samples/models/company-model.yaml
+        name:             bowling-league-Sprint-1
                           # options:     Unique name of an existing model, a URL to a model file or Git repo, 
                           #                or full/relative path to a model file.
                           #
@@ -84,8 +84,8 @@ project:
 #            
         docker:
             inUse:        true
-            userName:     tylertravismya
-            password:     69cutlass
+            userName:     xxxxxxxxxxxx
+            password:     xxxxxxxxxxxx
             orgName:      xxxxxxxxxx
             repo:         angular8demo
             tag:          latest

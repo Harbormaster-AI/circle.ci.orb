@@ -15,8 +15,7 @@ project:
     name: Angular11 Project
     description: Sample Angular11 project
     techstack:
-        name:             Angular11 MongoDB  
-                          
+        name:             Angular11 MongoDB                            
                           # To see the list of available tech stacks on a Harbormaster instance use command:
                           #     harbormaster_cli stack_list --output pretty
 
@@ -83,8 +82,8 @@ project:
 #            
         docker:
             inUse:        true
-            userName:     tylertravismya
-            password:     69cutlass
+            userName:     xxxxxx
+            password:     xxxxxx
             orgName:      xxxxxxxxxx
             repo:         angular8demo
             tag:          latest
@@ -95,8 +94,8 @@ project:
 #
         git:            
             name:        MyAngularGitHub     # an arbitrary name, but for JFrog, this should be the name of the Git related integration
-            username:    complexmathguy 
-            password:    00Corvette!!
+            username:    xxxxxx
+            password:    xxxxxx
             repository:  myapp
             tag:         latest
             host:        github.com          

@@ -16,8 +16,9 @@ project:
     description: Sample AWS Lambda Serverless using MongoDB project
     
     techstack:
-       name:              LambdaNoSQL      # To see the list of available tech stacks on a Harbormaster instance using command:
-                                           #     harbormaster_cli stack_list --output pretty
+       name:             LambdaNoSQL      
+                         # To see the list of available tech stacks on a Harbormaster instance using command:
+                         #     harbormaster_cli stack_list --output pretty
 
     model:
         name:             bowling-league-Sprint-1
@@ -114,8 +115,6 @@ project:
             vpcSecurityGroupIds: 
             delegateDAOHost:
             delegateDAOPort:
-			
-
 #            
 # Swagger parameters - see https://swagger.io/docs/specification/2-0/basic-structure/ for valid options   
 #

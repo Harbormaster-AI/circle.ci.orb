@@ -15,9 +15,9 @@ project:
     name: Spring Core NoSQL Demo
     description: Sample Spring Core MongoDB project      
     techstack:
-       name:                SpringMongoDB  
-                                           # To see the list of available tech stacks on a Harbormaster instance using command:
-                                           #     harbormaster_cli stack_list --output pretty
+       name:             SpringMongoDB  
+                         # To see the list of available tech stacks on a Harbormaster instance using command:
+                         #     harbormaster_cli stack_list --output pretty
 
        name:             bowling-league-Sprint-1
                           # options:     Unique name of an existing model, a URL to a model file or Git repo, 

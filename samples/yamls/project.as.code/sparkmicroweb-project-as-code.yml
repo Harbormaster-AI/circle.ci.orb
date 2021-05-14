@@ -18,8 +18,8 @@ project:
     description: Sample Spark Microweb Hibernate project      
     techstack:
        name:             SparkMicroWeb  
-                                         # To see the list of available tech stacks on a Harbormaster instance using command:
-                                         #     harbormaster_cli stack_list --output pretty
+                         # To see the list of available tech stacks on a Harbormaster instance using command:
+                         #     harbormaster_cli stack_list --output pretty
 
     model:
         name:             bowling-league-Sprint-1
