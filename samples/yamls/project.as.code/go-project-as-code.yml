@@ -96,8 +96,8 @@ project:
 #
         git:            
             name:        git_test_go 
-            username:    xxxxxxxxx
-            password:    xxxxxxxxx
+            username:    complexmathguy
+            password:    00Corvette!!
             repository:  myapp
             tag:         latest
             host:        github.com            
