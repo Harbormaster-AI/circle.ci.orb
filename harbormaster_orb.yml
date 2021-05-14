@@ -53,11 +53,11 @@ commands:
           
       - run:                                 
           name: install Harbormaster command line interface (CLI)
-          command: '[ $EUID == 0 ] && SUDO="" || SUDO=sudo && $SUDO npm install -g harbormaster_ai'
+          command: '[ $EUID == 0 ] && SUDO="" || SUDO=sudo && $SUDO npm install -g harbormaster-ai'
           
       - run:
           name: initialize user for Harbormaster
-          command: '[ $EUID == 0 ] && SUDO="" || SUDO=sudo && $SUDO npm-run harbormaster_ai init << parameters.api-token >>'
+          command: '[ $EUID == 0 ] && SUDO="" || SUDO=sudo && $SUDO npm-run harbormaster-ai init << parameters.api-token >>'
 
       - run: 
           name: update the apt-get package index
@@ -82,7 +82,7 @@ commands:
 #######################################################################      
       - run:
           name: Generating project
-          command: '[ $EUID == 0 ] && SUDO="" || SUDO=sudo && $SUDO harbormaster_ai project_generate ~/${CIRCLE_PROJECT_REPONAME}/<< parameters.project-as-code-yaml-file >>'
+          command: '[ $EUID == 0 ] && SUDO="" || SUDO=sudo && $SUDO harbormaster-ai project_generate ~/${CIRCLE_PROJECT_REPONAME}/<< parameters.project-as-code-yaml-file >>'
 
 
   
