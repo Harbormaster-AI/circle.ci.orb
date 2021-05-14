@@ -4,6 +4,8 @@
 
 The Harbormaster Orb is a simple, yet powerful way to leverage CircleCI to automate the generation of DevOps projects to produce fully functional applications that can be deployed to, tested, and run through your CircleCI pipeline.  Choose from a growing set of tech stacks.
 
+[Learn more ](http://docs.harbormaster.ai/) about Harbormaster.
+
 ## High Level Overview
 ![alt text](http://harbormaster.ai/wp-content/uploads/2021/04/harbormaster-orb-how-it-works.png)
 
@@ -14,25 +16,33 @@ The Harbormaster Orb is a simple, yet powerful way to leverage CircleCI to autom
 
 #### Orb Declaration
     orbs:
-    harbormaster: harbormaster/projectgen@1.0.0
+    harbormaster/projectgenerator@2.1.4
 
 #### Job Declaration
     jobs:
-      generate-app:
+      generate-devops-project:
         docker:
           - image: 'circleci/node:latest'
         steps:
           - harbormaster/initialize:
-              api-token: "Use DsJqTpYht3LcKb80 or PUT_YOUR_API_TOKEN_HERE"
+              api-token: "DsJqTpYht3LcKb80 or PUT_YOUR_API_TOKEN_HERE"
 
-A general CircleCI user account has been created resulting in user token DsJqTpYht3LcKb80.  If you prefer your own token, click [here](platform.harbormaster.com) to subscribe then create an account and access your unique generated API token.
+A general purpose CircleCI user account has been created resulting in the user token above `DsJqTpYht3LcKb80`.  
+
+This CircleCI user token will work for all CircleCI usage, but you will have to apply your Git
+password within your project-as-code YAML file.
+
+However, direct password usage on GitHub and Bitbucket will soon be deprecated.
+
+Instead, register at [platform.harbormaster.ai](platform.harbormaster.ai) to get your own API token and assign a Personal Git Access Token to ensure uninterrupted secure Git commits by Harbormaster.
+
 
 #### Workflows
 	workflows:
 		version: 2
 		app-gen-workflow:
 			jobs:
-			- generate-app
+			- generate-devops-project
 
 ## Project_as_Code Examples 
 
@@ -40,19 +50,19 @@ To invoke project generation, one mandatory YAML file is required. It is known a
 
 Visit [here](https://harbormaster.ai/harbormaster-project-generation/) to to learn about the Project-as-Code file content.
 
-Visit [here](https://github.com/Harbormaster-AI/circle.ci.orb/tree/main/samples) to view all sample model and Projec-as-Code YAML configuration files.
+Visit [here](https://github.com/Harbormaster-AI/circle.ci.orb/tree/main/samples) to view all sample model and Project-as-Code YAML configuration files.
 
 
 #### generation-yaml-file (__mandatory__):
   
-This YAML file contains the directives required to generate a project using a model identifier (by name, id or file_path), technology stack (by name or id), application options file, Docker params, CI/CD type, Git repo params and more.  
+This YAML file contains the directives required to generate a project using a model identifier (by name, id or file_path), technology stack (by name or id), application options file, Docker params, CI/CD type, Git params and more.  
   
-* Learn more about project-as-code YAML file [here](https://harbormaster.ai/harbormaster-project-generation/). 
+* Learn more about a project-as-code YAML file [here](https://harbormaster.ai/harbormaster-project-generation/). 
 * See project-as-code examples [here](https://github.com/Harbormaster-AI/circle.ci.orb/tree/main/samples/yamls/project.as.code)
 
-`NOTE: Use one of the project-as-code examples as a starting point.  Fill it out and replace existing values with those relevant to your project.`
+`NOTE: Use one of the provided sample project-as-code examples as a starting point.  Fill it out and replace existing values with those relevant to your project, especially the Git and Docker related params.`
   
-#### Known Issue
+#### Known Issue(s)
 	
 During the first run of a build, from time to time the following issues has been observed:
 	
@@ -63,32 +73,17 @@ The problem appears to be quickly fixed if the config.yml file in the repository
 
 #### Tech Stack Specific Examples
 
-#### Angular7          
+#### Go          
       - harbormaster/generate_devops_project:
-          generation-yaml-file: "samples/yamls/project.as.code/angular7-mongo-project-as-code.yml"
+          generation-yaml-file: "samples/yamls/project.as.code/go-project-as-code.yml"
 
-#### Angular8
+#### Angular11          
       - harbormaster/generate_devops_project:
-          generation-yaml-file: "samples/yamls/project.as.code/angular9-mongo-project-as-code.yml"
+          generation-yaml-file: "samples/yamls/project.as.code/angular-mongo-project-as-code.yml"
 
 #### Apollo GraphQL
       - harbormaster/generate_devops_project:
           generation-yaml-file: "samples/yamls/project.as.code/apollo-project-as-code.yml"
-
-#### ASP.NET          
-      - harbormaster/generate_devops_project:
-          generation-yaml-file: "samples/yamls/project.as.code/aspdotnet-project-as-code.yml"
-
-Note: If using one of the following AWS Lambda tech stacks, you will have to assign the access key and secret key as project level environment variables.  See https://circleci.com/docs/2.0/env-vars/#setting-an-environment-variable-in-a-project for more details. Be sure to name the accesskey USER\_AWS\_ACCESSKEY and name the secretkey USER\_AWS\_SECRETKEY.  Equally important, 
-make sure you have the correct policies assigned for the related user (_AWSCodeDeployRoleForLambda, AWSLambdaExecute, AWSLambdaRole_, etc..)
-
-#### AWS Lambda using MongoDB
-      - harbormaster/generate_devops_project:
-          generation-yaml-file: "samples/yamls/project.as.code/aws_lambda-mongo-project-as-code.yml"
-
-#### AWS Lambda using Relational DB
-      - harbormaster/generate_devops_project:
-          generation-yaml-file: "samples/yamls/project.as.code/aws_lambda-rdbms-project-as-code.yml"
 
 #### ASP.NET          
       - harbormaster/generate_devops_project:
@@ -121,3 +116,14 @@ make sure you have the correct policies assigned for the related user (_AWSCodeD
       - harbormaster/generate_devops_project:
           generation-yaml-file: "samples/yamls/project.as.code/struts-rdbms-project-as-code.yml"
 
+
+Note: If using one of the following AWS Lambda tech stacks, you will have to assign the access key and secret key as project level environment variables.  See https://circleci.com/docs/2.0/env-vars/#setting-an-environment-variable-in-a-project for more details. Be sure to name the accesskey USER\_AWS\_ACCESSKEY and name the secretkey USER\_AWS\_SECRETKEY.  Equally important, 
+make sure you have the correct policies assigned for the related user (_AWSCodeDeployRoleForLambda, AWSLambdaExecute, AWSLambdaRole_, etc..)
+
+#### AWS Lambda using MongoDB
+      - harbormaster/generate_devops_project:
+          generation-yaml-file: "samples/yamls/project.as.code/aws_lambda-mongo-project-as-code.yml"
+
+#### AWS Lambda using Relational DB
+      - harbormaster/generate_devops_project:
+          generation-yaml-file: "samples/yamls/project.as.code/aws_lambda-rdbms-project-as-code.yml"
