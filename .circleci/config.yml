@@ -29,13 +29,14 @@ jobs:
 ## https://harbormaster.ai/harbormaster-project-generation/
 ###################################################################
 
+## Angular11          
+      - harbormaster/generate_devops_project:
+           project-as-code-yaml-file: "samples/yamls/project.as.code/angular-project-as-code.yml"
+
 ## Apollo GraphQL
 ##      - harbormaster/generate_devops_project:
 ##           project-as-code-yaml-file: "samples/yamls/project.as.code/apollo-project-as-code.yml"
 
-## Angular7          
-##      - harbormaster/generate_devops_project:
-##           project-as-code-yaml-file: "samples/yamls/project.as.code/angular-project-as-code.yml"
 
 ## ASP.NET          
 ##      - harbormaster/generate_devops_project:
@@ -46,8 +47,8 @@ jobs:
 ##           project-as-code-yaml-file: "samples/yamls/project.as.code/django-project-as-code.yml"
            
 ## Go
-      - harbormaster/generate_devops_project:
-           project-as-code-yaml-file: "samples/yamls/project.as.code/go-project-as-code.yml"           
+##      - harbormaster/generate_devops_project:
+##           project-as-code-yaml-file: "samples/yamls/project.as.code/go-project-as-code.yml"           
            
 ## Ruby on Rails
 ##      - harbormaster/generate_devops_project:
