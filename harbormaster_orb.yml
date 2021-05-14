@@ -30,9 +30,6 @@ commands:
       api-token:
         description: "A user's Harbormaster API token"
         type: env_var_name
-      harbormaster-url:
-        description: "The URL of the Harbormaster instance to connect to.  Leave blank if using the Harbormaster SaaS instance"
-        type: env_var_name
       
     steps:
 #######################################################################
@@ -60,7 +57,7 @@ commands:
           
       - run:
           name: initialize user for Harbormaster
-          command: '[ $EUID == 0 ] && SUDO="" || SUDO=sudo && $SUDO npm-run harbormaster_ai init << parameters.api-token >> << parameters.harbormaster-url >>'
+          command: '[ $EUID == 0 ] && SUDO="" || SUDO=sudo && $SUDO npm-run harbormaster_ai init << parameters.api-token >>'
 
       - run: 
           name: update the apt-get package index
