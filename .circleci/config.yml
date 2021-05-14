@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-  harbormaster: harbormaster/projectgen@1.0.0
+  harbormaster: harbormaster/projectgenerator@2.1.0
 
 jobs:
   generate-devops-project:
