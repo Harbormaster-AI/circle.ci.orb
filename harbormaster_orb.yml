@@ -82,7 +82,7 @@ commands:
 #######################################################################      
       - run:
           name: Generating project
-          command: '[ $EUID == 0 ] && SUDO="" || SUDO=sudo && $SUDO harbormaster-ai project_generate ~/${CIRCLE_PROJECT_REPONAME}/<< parameters.project-as-code-yaml-file >>'
+          command: '[ $EUID == 0 ] && SUDO="" || SUDO=sudo && $SUDO harbormaster project_generate ~/${CIRCLE_PROJECT_REPONAME}/<< parameters.project-as-code-yaml-file >>'
 
 
   
