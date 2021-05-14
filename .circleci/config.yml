@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-  harbormaster: harbormaster/projectgenerator@2.1.0
+  harbormaster: harbormaster/projectgenerator@2.1.1
 
 jobs:
   generate-devops-project:
@@ -11,10 +11,8 @@ jobs:
 
     steps:
       - harbormaster/initialize:
-          api-token: DsJqTpYht3LcKb80    # YOUR_TOKEN_HERE : this CircleCI user token will work for all CircleCI usage, 
-                                         # but you can replace it with your token as a registered user on platform.harbormaster.ai
-          harbormaster-url:              # The URL of the Harbormaster instance to connect to.  
-                                         # Leave blank if using the default instance hosted by Harbormaster
+          api-token: DsJqTpYht3LcKb80  # YOUR_TOKEN_HERE : this CircleCI user token will work for all CircleCI usage, 
+                                       # but you can replace it with your token as a registered user on platform.harbormaster.ai
                                       
 
 ##################################################################
