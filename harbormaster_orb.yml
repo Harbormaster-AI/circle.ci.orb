@@ -4,7 +4,7 @@ version: 2.1
 
 description: |
   A CircleCI Orb to invoke the Harbormaster platform to generate fully functioning and deployable 
-  projects from a single "project-as-code" YAML file. The result is an MVP quality applications based on a 
+  projects from a single "project-as-code" YAML file. The result is an MVP quality application based on a 
   single business model and one of the many supported technology stacks.
   
   Model format support includes:
@@ -28,7 +28,7 @@ commands:
       at https://github.com/Harbormaster-AI/circle.ci.orb/harbormaster_orb.yaml.
     parameters:
       api-token:
-        description: "A user's Harbormaster API token"
+        description: "Your Harbormaster API token"
         type: env_var_name
       
     steps:
@@ -69,7 +69,7 @@ commands:
 
   generate_devops_project:
     description: |
-      Command to generate a DevOps project by providing a Project-as-Code YAML generation file
+      Command to generate a DevOps project by providing a Project-as-Code YAML file
     parameters:
       project-as-code-yaml-file:
         description: "Project-as-Code YAML file containing the project generation directives"
