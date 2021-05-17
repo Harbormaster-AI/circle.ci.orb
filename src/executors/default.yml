@@ -1,0 +1,7 @@
+description: >
+  Command to initialize the Harbormaster orb by providing your
+  API token. This token is obtained from your online account 
+  under User Preferences access on http://platform.harbormaster.com.
+
+docker:
+  - image: 'circleci/node:latest'

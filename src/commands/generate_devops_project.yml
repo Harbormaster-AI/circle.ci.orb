@@ -1,0 +1,11 @@
+## Invokes a shell script to call Harbormaster to handle generating the DevOps project
+parameters:
+      project-as-code-file:
+        description: "Your Harbormaster API token"
+        type: string
+steps:
+  - run:
+      environment:
+        HARBORMASTER_PROJECT_AS_CODE_FILE: <<parameters.project-as-code-file>>
+      name: Generating DevOps Project
+      command: <<include(scripts/generate_devops_project.sh)>>
