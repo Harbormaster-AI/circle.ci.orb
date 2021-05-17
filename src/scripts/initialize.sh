@@ -13,7 +13,7 @@ echo install Harbormaster command line interface
 npm install -g harbormaster-ai
           
 echo initialize user for Harbormaster
-npm-run harbormaster init ${HARBORMASTER_API_TOKEN}
+npm-run harbormaster init "${HARBORMASTER_API_TOKEN}"
   
 echo update the apt-get package index
 apt-get update
