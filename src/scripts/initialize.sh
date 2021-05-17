@@ -9,7 +9,7 @@ npm install -g npm@latest
 echo install npm-run
 npm install -g npm-run@latest    
           
-echo install Harbormaster command line interface (CLI)
+echo install Harbormaster command line interface
 npm install -g harbormaster-ai
           
 echo initialize user for Harbormaster
