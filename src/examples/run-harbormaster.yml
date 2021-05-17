@@ -1,4 +1,6 @@
-version: 2.1
+description: initialization and usage of the Harbormaster project generator Orb.
+usage:
+  version: 2.1
 
 orbs:
   harbormaster: harbormaster/projectgenerator@2.1.4
