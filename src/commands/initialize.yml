@@ -2,12 +2,12 @@
 ## API token. This token is obtained from your online account
 ## under User Preferences access on http://platform.harbormaster.com.
 parameters:
-      api-token:
+    api-token:
         description: "Your Harbormaster API token"
         type: string
 steps:
   - run:
-      environment:
+    environment:
         HARBORMASTER_API_TOKEN: <<parameters.api-token>>
-      name: Harbormaster initialization
-      command: <<include(scripts/initialize.sh)>>
+        name: Harbormaster initialization
+        command: <<include(scripts/initialize.sh)>>
