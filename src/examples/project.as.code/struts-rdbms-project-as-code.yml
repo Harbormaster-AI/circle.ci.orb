@@ -89,7 +89,7 @@ project:
             name: git_test_Struts # an arbitrary name, but for JFrog, this should be the name of the Git related integration
             username: xxxx
             password: xxxx
-            repository: Struts
+            repository: struts-repo
             tag: latest
             host: bitbucket.org
 

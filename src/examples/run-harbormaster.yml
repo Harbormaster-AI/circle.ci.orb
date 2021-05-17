@@ -30,7 +30,6 @@ jobs:
 ## Learn more about configuration files and settings at:
 ## https://harbormaster.ai/harbormaster-project-generation/
 ##---------------------------------------------------------------------------------
-
 ## Angular11          
         - harbormaster/generate_devops_project:
             project-as-code-yaml-file: "samples/yamls/project.as.code/angular-project-as-code.yml"
@@ -39,12 +38,6 @@ jobs:
 ## Apollo GraphQL
 ##      - harbormaster/generate_devops_project:
 ##           project-as-code-yaml-file: "samples/yamls/project.as.code/apollo-project-as-code.yml"
-##---------------------------------------------------------------------------------
-
-##---------------------------------------------------------------------------------
-## ASP.NET          
-##      - harbormaster/generate_devops_project:
-##           project-as-code-yaml-file: "samples/yamls/project.as.code/aspdotnet-project-as-code.yml"
 ##---------------------------------------------------------------------------------
 
 ##---------------------------------------------------------------------------------
@@ -58,19 +51,7 @@ jobs:
 ##      - harbormaster/generate_devops_project:
 ##           project-as-code-yaml-file: "samples/yamls/project.as.code/go-project-as-code.yml"           
 ##---------------------------------------------------------------------------------
-
-##---------------------------------------------------------------------------------           
-## Ruby on Rails
-##      - harbormaster/generate_devops_project:
-##           project-as-code-yaml-file: "samples/yamls/project.as.code/ruby-project-as-code.yml"  
-##---------------------------------------------------------------------------------
                       
-##---------------------------------------------------------------------------------
-## Spring Boot using MongoDB
-##      - harbormaster/generate_devops_project:
-##           project-as-code-yaml-file: "samples/yamls/project.as.code/springboot-mongodb-project-as-code.yml"
-##---------------------------------------------------------------------------------
-
 ##---------------------------------------------------------------------------------
 ## Spring Boot using MySQL          
 ##      - harbormaster/generate_devops_project:
@@ -78,17 +59,11 @@ jobs:
 ##---------------------------------------------------------------------------------
 
 ##---------------------------------------------------------------------------------
-## Spark Microweb using MySQL
+## Strus2 using Hibernate
 ##      - harbormaster/generate_devops_project:
-##           project-as-code-yaml-file: "samples/yamls/project.as.code/sparkmicroweb-project-as-code.yml"
+##           project-as-code-yaml-file: "samples/yamls/project.as.code/stryts-rdbms-project-as-code.yml"
 ##---------------------------------------------------------------------------------
 
-##---------------------------------------------------------------------------------
-## Struts2 using MySQL
-##      - harbormaster/generate_devops_project:
-##           project-as-code-yaml-file: "samples/yamls/project.as.code/struts-rdbms-project-as-code.yml"
-##---------------------------------------------------------------------------------  
-          
 ##---------------------------------------------------------------------------------
 # In order to deploy the generated Lambda functions, the key vars 
 # (USER_AWS_ACCESSKEY and USER_AWS_SECRETKEY) are 
