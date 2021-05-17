@@ -69,8 +69,8 @@ project:
             orgName: xxxxxxxxxx
             repo: strutsdemo
             tag: latest
-            host: #empty uses docker hubd default             
-             
+            host: #empty uses docker hubd default
+
         # -----------------------------------------------------------------------------
         # CI/CD parameters
         # -----------------------------------------------------------------------------
