@@ -28,6 +28,8 @@ executors:
 
 jobs:
   generate-devops-project:
+      docker:
+        - image: 'circleci/node:latest'
       steps:
         - checkout:
             path: "~/${CIRCLE_PROJECT_REPONAME}"
@@ -77,7 +79,6 @@ workflows:
       # Run any integration tests defined within the `jobs` key.
       - generate-devops-project:
           name: Generate DevOps Project using Harbormaster
-          executor: docker-base
       # Publish a semver version of the orb. relies on
       # the commit subject containing the text "[semver:patch|minor|major|skip]"
       # as that will determine whether a patch, minor or major
