@@ -1,5 +1,5 @@
 ## Invokes a shell script to call Harbormaster to handle generating the DevOps project
-parameters: =
+parameters:
     project-as-code-file:
         description: "Your Harbormaster API token"
         type: string
