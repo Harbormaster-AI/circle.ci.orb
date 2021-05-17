@@ -6,8 +6,8 @@ parameters:
         description: "Your Harbormaster API token"
         type: string
 steps:
-  - run:
-    environment:
-        HARBORMASTER_API_TOKEN: <<parameters.api-token>>
+    - run:
+        environment:
+            HARBORMASTER_API_TOKEN: <<parameters.api-token>>
         name: Harbormaster initialization
         command: <<include(scripts/initialize.sh)>>
