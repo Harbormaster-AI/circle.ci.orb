@@ -238,7 +238,7 @@ project:
 # Git repository parameters
 #
         git:            
-            name:        git_test_Django # an arbitrary name, but for JFrog, this should be the name of the Git related integration
+            name:        git_test fs# an arbitrary name, but for JFrog, this should be the name of the Git related integration
             username:    xxxxxxxxxxxxx
             password:    xxxxxxxxxxxxx
             repository:  xxxxxxxxxxxxx
