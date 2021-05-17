@@ -106,11 +106,11 @@ project:
         # Go parameters
         # -----------------------------------------------------------------------------
         go:
-           appPort: 8088
-           dbType: mysql #options: mysql,postgres,sqlite,sqlserver
-           dbUserName: root
-           dbPassword: letmein2
-           dbName: appDB
-           dbHost: 127.0.0.1
-           dbPort: 3306
-           dbArgs: charset=utf8mb4&parseTime=True&loc=Local&createDatabaseIfNotExist=true&autoReconnect=true&useSSL=false&allowPublicKeyRetrieval=true
+            appPort: 8088
+            dbType: mysql #options: mysql,postgres,sqlite,sqlserver
+            dbUserName: root
+            dbPassword: letmein2
+            dbName: appDB
+            dbHost: 127.0.0.1
+            dbPort: 3306
+            dbArgs: charset=utf8mb4&parseTime=True&loc=Local&createDatabaseIfNotExist=true&autoReconnect=true&useSSL=false&allowPublicKeyRetrieval=true
