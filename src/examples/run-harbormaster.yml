@@ -5,7 +5,8 @@ orbs:
 
 jobs:
   generate-devops-project:
-      executor: harbormaster/default
+      docker:
+        - image: 'circleci/node:latest'
       steps:
         - checkout:
             path: "~/${CIRCLE_PROJECT_REPONAME}"
