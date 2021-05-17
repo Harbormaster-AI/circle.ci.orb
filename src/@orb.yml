@@ -4,10 +4,10 @@ description: |
   Use the Harbormaster Orb to generate fully functioning and deployable
   projects from a single "project-as-code" YAML file. The result is an MVP quality application based on your
   business model using one of the many supported technology stacks.
-  Growing list of tech stacks include:
+  Growing list of tech stacks include -
   Apollo, Angular7, Django, Go, Ruby on Rails, Spring Boot, AWS Lambda,
   Google Functions, ASP.NET, Spark Microweb and Struts2.
-  Support Model Formats:
+  Support Model Formats -
   YAML, JSON, UML, XMI, Eclipse Model Framework, Java source code in a GIT repo, and SQL Scripts.
 
   Use the following as an example how to use the Harbormaster Orb:
@@ -15,5 +15,3 @@ description: |
 
 display:
   source_url: "https://github.com/Harbormaster-AI/circle.ci.orb"
-
-
