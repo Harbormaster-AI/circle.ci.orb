@@ -7,7 +7,7 @@
 # To use Git, Docker, and any provider, be sure to have created
 # an account with each.
 #
-# For Git, before generating the project be sure to create the 
+# For Git, before generating the project be sure to create the
 # repository and designate as public before
 #
 # Minimally, anywhere you see an xxx, replace with your relevant value
@@ -29,7 +29,7 @@ project:
         #
         # To see the list of supported model types use command:
         #      harbormaster_cli model_types_supported
-        # 
+        #
         # To see the list of available models on a Harbormaster instance use command:
         #      harbormaster_cli model_list --output pretty
         #
@@ -78,7 +78,7 @@ project:
             # -----------------------------------------------------------------------------
             # options: codeship, circleci, jfrog.pipelines, jenkins, azure, aws, gitlab, bitbucket, github
             # -----------------------------------------------------------------------------
-            platform:  circleci    
+            platform: circleci
             AES key: # codeship project key; ex: XKyy2IDcSptIIvMY8KLMVMcxVs+ZK6AyNu1B4Wu1DPY=
 
 
@@ -104,29 +104,29 @@ project:
 
         # -----------------------------------------------------------------------------
         # AWS parameters
-        # -----------------------------------------------------------------------------        
+        # -----------------------------------------------------------------------------
         aws:
             key-pair-name: xxxxxxxxxxxx
             vpc: xxxxxxxxxxxxx
             ec2-instance-type: t2.medium # options: any AWS instance type
             access-key: ASSIGN__ON_CICD_PLATFORM_AS_ENV_VARS
             secret-key: ASSIGN__ON_CICD_PLATFORM_AS_ENV_VARS
-            
-#
-# Kubernetes parameters: If not in use, and Terraform
-#                        is in use, physical infrastructure
-#                        will be provisioned on the provider
-#
+
+        # -----------------------------------------------------------------------------
+        # Kubernetes parameters: If not in use, and Terraform
+        #                        is in use, physical infrastructure
+        #                        will be provisioned on the provider
+        # -----------------------------------------------------------------------------
         kubernetes:
-            inUse:              true
-            host:               https://xxx.xxx.xxx.xxx
-            project:            xxxxxxxxxxx # assigned project name
-            region:             us-central1-a # options: any provider region
-            hostTarget:         google # option: google, aws, azure, nutanix
-            username:           admin
-            password:           5UhfcIPAPsiPXklT
-            exposeAsService:    true
-            serviceType:        LoadBalancer # options: LoadBalancer, NodePort, ClusterIP
+            inUse: true
+            host: https://xxx.xxx.xxx.xxx
+            project: xxxxxxxxxxx # assigned project name
+            region: us-central1-a # options: any provider region
+            hostTarget: google # option: google, aws, azure, nutanix
+            username: admin
+            password: 5UhfcIPAPsiPXklT
+            exposeAsService: true
+            serviceType: LoadBalancer # options: LoadBalancer, NodePort, ClusterIP
             useSessionAffinity: true
 
 
@@ -142,7 +142,7 @@ project:
             repoUrl: http://xxx.xxx.xxx.xxx:8081/repository/npm-public
 
        # -----------------------------------------------------------------------------
-       # Hibernate ORM parameters            
+       # Hibernate ORM parameters
        # -----------------------------------------------------------------------------
         hibernate:
             hibernate.connection.driver.class: com.mysql.jdbc.Driver
@@ -150,4 +150,4 @@ project:
             hibernate.connection.password: xxxx
             hibernate.dialect: org.hibernate.dialect.MySQL8Dialect
             hibernate.max.fetch.depth: 1
-            hibernate.connection.url: jdbc:mysql://localhost:3306/lambdademo?createDatabaseIfNotExist\u003dtrue #do no remove the createDatabaseIfNotExist\u003dtrue 
+            hibernate.connection.url: jdbc:mysql://localhost:3306/lambdademo?createDatabaseIfNotExist\u003dtrue #do no remove the createDatabaseIfNotExist\u003dtrue
