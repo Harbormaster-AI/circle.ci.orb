@@ -7,19 +7,19 @@ orbs:
 
 jobs:
   generate-devops-project:
-      docker:
-        - image: 'circleci/node:latest'
-      steps:
-        - checkout:
-            path: "~/${CIRCLE_PROJECT_REPONAME}"
-        - harbormaster/initialize:
-            api-token: DsJqTpYht3LcKb80    # This CircleCI user token will work for all CircleCI usage, but you will have to apply your Git
-                                           #    password within your project-as-code YAML file
-                                           #
-                                           # However, direct password usage on GitHub and Bitbucket will soon be deprecated.
-                                           #
-                                           # Instead, register at platform.harbormaster.ai to get your own API token and assign a
-                                           #  Personal Git Access Token to ensure uninterrupted secure commits by Harbormaster
+    docker:
+      - image: 'circleci/node:latest'
+    steps:
+      - checkout:
+          path: "~/${CIRCLE_PROJECT_REPONAME}"
+      - harbormaster/initialize:
+          api-token: DsJqTpYht3LcKb80    # This CircleCI user token will work for all CircleCI usage, but you will have to apply your Git
+                                         #    password within your project-as-code YAML file
+                                         #
+                                         # However, direct password usage on GitHub and Bitbucket will soon be deprecated.
+                                         #
+                                         # Instead, register at platform.harbormaster.ai to get your own API token and assign a
+                                         #  Personal Git Access Token to ensure uninterrupted secure commits by Harbormaster
 
 ##---------------------------------------------------------------------------------
 ## Multiple project generation scenarios are included to give an example of
@@ -30,8 +30,8 @@ jobs:
 ## https://harbormaster.ai/harbormaster-project-generation/
 ##---------------------------------------------------------------------------------
 ## Angular11
-        - harbormaster/generate_devops_project:
-            project-as-code-yaml-file: "samples/yamls/project.as.code/angular-project-as-code.yml"
+      - harbormaster/generate_devops_project:
+          project-as-code-yaml-file: "samples/yamls/project.as.code/angular-project-as-code.yml"
 
 ##---------------------------------------------------------------------------------
 ## Apollo GraphQL
