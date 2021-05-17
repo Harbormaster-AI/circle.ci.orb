@@ -23,7 +23,7 @@ jobs:
 
 ##---------------------------------------------------------------------------------
 ## Multiple project generation scenarios are included to give an example of
-## usage for each supported technology stacks. Only include the 
+## usage for each supported technology stacks. Only include the
 ## section(s) you need.
 ##
 ## Learn more about configuration files and settings at:
@@ -69,11 +69,11 @@ jobs:
 # read in as env vars for the current project.
 # Learn how to add these env vars at
 # https://circleci.com/docs/2.0/env-vars/#setting-an-environment-variable-in-a-project
-#            
+
 ## AWS Lambda using MySQL
 ##      - harbormaster/generate_devops_project:
 ##           project-as-code-yaml-file: "samples/yamls/project.as.code/generate-lambdacore.yml"
-           
+
 ## AWS Lambda using MongoDB
 ##      - harbormaster/generate_devops_project:
 ##           project-as-code-yaml-file: "samples/yamls/project.as.code/generate-lambdanosql.yml"
