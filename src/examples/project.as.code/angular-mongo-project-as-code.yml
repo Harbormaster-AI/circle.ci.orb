@@ -1,9 +1,4 @@
-#
-# Standard DevOps project creation options.  
-#
-# Pay close attention to parameters that require values unique  
-# to you, such as those for Git, Docker, and AWS.
-## -----------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 # Standard DevOps project creation options.
 #
 # Pay close attention to parameters that require values unique

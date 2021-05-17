@@ -11,5 +11,3 @@ steps:
         HARBORMASTER_API_TOKEN: <<parameters.api-token>>
       name: Harbormaster initialization
       command: <<include(scripts/initialize.sh)>>
- 
- 
