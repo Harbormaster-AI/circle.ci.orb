@@ -5,9 +5,10 @@ orbs:
   harbormaster: harbormaster/projectgenerator@<<pipeline.parameters.dev-orb-version>>
   orb-tools: circleci/orb-tools@10.0
   shellcheck: circleci/shellcheck@2.0
-
+#--------------------------------------------------------------------------------
 # Pipeline Parameters
-## These parameters are used internally by orb-tools. Skip to the Jobs section.
+# These parameters are used internally by orb-tools. Skip to the Jobs section.
+#--------------------------------------------------------------------------------
 parameters:
   run-integration-tests:
     description: An internal flag to prevent integration test from running before a development version has been created.
@@ -35,7 +36,7 @@ jobs:
         - harbormaster/initialize:
             api-token: DsJqTpYht3LcKb80
         - harbormaster/generate_devops_project:
-            project-as-code-yaml-file: "samples/yamls/project.as.code/angular-project-as-code.yml"                                           
+            project-as-code-yaml-file: "samples/yamls/project.as.code/angular-project-as-code.yml"
 
 workflows:
   # Prior to producing a development orb (which requires credentials) basic validation, linting, and even unit testing can be performed.
@@ -93,4 +94,3 @@ workflows:
               only:
                 - master
                 - main
-  
