@@ -1,11 +1,11 @@
 # -----------------------------------------------------------------------------
-# Standard DevOps project creation options.  
+# Standard DevOps project creation options.
 #
-# Pay close attention to parameters that require values unique  
+# Pay close attention to parameters that require values unique
 # to you, such as those for Git, Docker, and AWS.
 #
 # To use Git, Docker, and any provider, be sure to have created
-# an account with each.  
+# an account with each.
 #
 # For Git, before generating the project be sure to create the 
 # repository and designate as public before
@@ -21,27 +21,27 @@ project:
         # To see the list of available tech stacks on a Harbormaster instance using command:
         #     harbormaster_cli stack_list --output pretty
         # -----------------------------------------------------------------------------
-       name: Struts2
+        name: Struts2
     model:
         # -----------------------------------------------------------------------------
-        #  Unique name of an existing model, a URL to a model file or Git repo, 
+        #  Unique name of an existing model, a URL to a model file or Git repo,
         #                or full/relative path to a model file.
         #
         # To see the list of supported model types use command:
         #      harbormaster_cli model_types_supported
-        #                          
+        # 
         # To see the list of available models on a Harbormaster instance use command:
         #      harbormaster_cli model_list --output pretty
-        # 
+        #
         # -----------------------------------------------------------------------------
         name: bowling-league-Sprint-1
 
         # For JAR files and Git Repos with Java Files, include the root package names of the root package
         #        javaRootPackageNames:
-        #          - com.freeport.bo    
+        #          - com.freeport.bo
         #        primaryKeyPattern: _pojoName_Id # the pattern to look for when interrogating a POJO for a primary key field
-                              # allowed values are a either a literal, ex: id OR 
-                              # POJOName with a suffix, ex: _pojoName_Id will handle accountId, customerId, etc...                 
+                              # allowed values are a either a literal, ex: id OR
+                              # POJOName with a suffix, ex: _pojoName_Id will handle accountId, customerId, etc...
 
     # -----------------------------------------------------------------------------
     # DevOps Project Creation Options
@@ -79,13 +79,13 @@ project:
             # options: codeship, circleci, jfrog.pipelines, jenkins, azure, aws, gitlab, bitbucket, github
             # -----------------------------------------------------------------------------
             platform:  circleci    
-            AES key:               # codeship project key; ex: XKyy2IDcSptIIvMY8KLMVMcxVs+ZK6AyNu1B4Wu1DPY=
+            AES key: # codeship project key; ex: XKyy2IDcSptIIvMY8KLMVMcxVs+ZK6AyNu1B4Wu1DPY=
 
 
         # -----------------------------------------------------------------------------
         # Git repository parameters
         # -----------------------------------------------------------------------------
-        git:            
+        git:
             name: git_test_Struts # an arbitrary name, but for JFrog, this should be the name of the Git related integration
             username: xxxx
             password: xxxx
@@ -120,22 +120,22 @@ project:
         kubernetes:
             inUse:              true
             host:               https://xxx.xxx.xxx.xxx
-            project:            xxxxxxxxxxx        # assigned project name
-            region:             us-central1-a      # options: any provider region
-            hostTarget:         google             # option: google, aws, azure, nutanix
+            project:            xxxxxxxxxxx # assigned project name
+            region:             us-central1-a # options: any provider region
+            hostTarget:         google # option: google, aws, azure, nutanix
             username:           admin
             password:           5UhfcIPAPsiPXklT
             exposeAsService:    true
-            serviceType:        LoadBalancer      # options: LoadBalancer, NodePort, ClusterIP
+            serviceType:        LoadBalancer # options: LoadBalancer, NodePort, ClusterIP
             useSessionAffinity: true
 
 
        # -----------------------------------------------------------------------------
-       # Artifact repository for build dependencies and binaries            
+       # Artifact repository for build dependencies and binaries
        # -----------------------------------------------------------------------------
         artifact-repo:
             inUse: false
-            type: nexus             # options: nexus, jfrog
+            type: nexus # options: nexus, jfrog
             userName: xxxxxxx
             password: xxxxxxxx
             email: xxxx.xxxxxx@xxxxxxx.com
