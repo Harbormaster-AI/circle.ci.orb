@@ -35,7 +35,7 @@ jobs:
       - checkout:
           path: "~/${CIRCLE_PROJECT_REPONAME}"
       - harbormaster/initialize:
-          api-token: DsJqTpYht3LcKb80
+          api-token: HARBORMASTER_API_TOKEN
       - harbormaster/generate_devops_project:
           project-as-code-yaml-file: "src/examples/project.as.code/angular-project-as-code.yml"
 
