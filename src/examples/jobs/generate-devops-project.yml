@@ -1,0 +1,26 @@
+description: |
+ Initialization and usage of the Harbormaster project generator Orb.
+  
+  Register at platform.harbormaster.ai to get your own API token and assign a
+  Personal Git Access Token to ensure uninterrupted secure Git commits by Harbormaster
+
+  Next, create an environmental variable on CircleCI, assign it your Harbormaster
+  API token, and finally apply the variable name here.
+
+  See https://circleci.com/docs/2.0/env-vars/
+  for more details on assigning an environment variable.
+
+
+ docker:
+   - image: 'circleci/node:latest'
+   
+ steps:
+   
+   - checkout:
+       path: "~/${CIRCLE_PROJECT_REPONAME}"
+   
+   - harbormaster/initialize:
+       api-token: <<parameters.api-token>>  
+       
+   - harbormaster/generate_devops_project:
+       project-as-code-yaml-file: <<parameters.project-as-code-yaml-file>>
