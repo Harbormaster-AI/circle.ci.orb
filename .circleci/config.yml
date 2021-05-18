@@ -74,8 +74,10 @@ workflows:
     when: << pipeline.parameters.run-integration-tests >>
     jobs:
       # Run any integration tests defined within the `jobs` key.
-      - generate-devops-project:
-          name: Generate DevOps Project using Harbormaster
+      - harbormaster/generate-devops-project:
+          api-token: HARBORMASTER_API_TOKEN
+          project-as-code-yaml-file: "src/examples/project.as.code/angular-project-as-code.yml"
+          
       # Publish a semver version of the orb. relies on
       # the commit subject containing the text "[semver:patch|minor|major|skip]"
       # as that will determine whether a patch, minor or major
