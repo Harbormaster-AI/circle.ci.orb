@@ -64,6 +64,7 @@ project:
         # Docker parameters
         # -----------------------------------------------------------------------------
         docker:
+            inUse: true
             userName: xxxxxxxxxxxx
             password: xxxxxxxxxxxx
             orgName: xxxxxxxxxx
