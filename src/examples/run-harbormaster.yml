@@ -1,89 +1,35 @@
-description: initialization and usage of the Harbormaster project generator Orb
+description: |
+  Initialization and usage of the Harbormaster project generator Orb.
+  
+  api-token - 
+  
+  Register at platform.harbormaster.ai to get your own API token and assign a
+  Personal Git Access Token to ensure uninterrupted secure Git commits by Harbormaster
+
+  Next, create an environmental variable on CircleCI, assign it your Harbormaster
+  API token, and finally apply the variable name here.
+
+  See https://circleci.com/docs/2.0/env-vars/
+  for more details on assigning an environment variable.
+  
+  project-as-code-yaml-file - 
+  
+  A Project-as-Code YAML file to apply during DevOps project generation.
+  
+  See example project-as-code files at 
+  - https://github.com/Harbormaster-AI/circle.ci.orb/tree/main/src/examples/project.as.code
+  
 usage:
   version: 2.1
 
 orbs:
   harbormaster: harbormaster/projectgenerator@2.1.4
 
-jobs:
-  generate-devops-project:
-    docker:
-      - image: 'circleci/node:latest'
-    steps:
-      - checkout:
-          path: "~/${CIRCLE_PROJECT_REPONAME}"
-      - harbormaster/initialize:
-          ##---------------------------------------------------------------------------------
-          # This CircleCI user token will work for all CircleCI usage, but you will have to apply your Git
-          #    password within your project-as-code YAML file
-          #
-          # However, direct password usage on GitHub and Bitbucket will soon be deprecated.
-          #
-          # Instead, register at platform.harbormaster.ai to get your own API token and assign a
-          #  Personal Git Access Token to ensure uninterrupted secure commits by Harbormaster
-          ##---------------------------------------------------------------------------------
-          api-token: DsJqTpYht3LcKb80
-
-##---------------------------------------------------------------------------------
-## Multiple project generation scenarios are included to give an example of
-## usage for each supported technology stacks. Only include the
-## section(s) you need.
-##
-## Learn more about configuration files and settings at:
-## https://harbormaster.ai/harbormaster-project-generation/
-##---------------------------------------------------------------------------------
-## Angular11
-      - harbormaster/generate_devops_project:
-          project-as-code-yaml-file: "src/examples/project.as.code/angular-project-as-code.yml"
-
-##---------------------------------------------------------------------------------
-## Apollo GraphQL
-##      - harbormaster/generate_devops_project:
-##           project-as-code-yaml-file: "src/examples/project.as.code/apollo-project-as-code.yml"
-##---------------------------------------------------------------------------------
-
-##---------------------------------------------------------------------------------
-## Django
-##      - harbormaster/generate_devops_project:
-##           project-as-code-yaml-file: "src/examples/project.as.code/django-project-as-code.yml"
-##---------------------------------------------------------------------------------
-
-##---------------------------------------------------------------------------------
-## Go
-##      - harbormaster/generate_devops_project:
-##           project-as-code-yaml-file: "src/examples/project.as.code/go-project-as-code.yml"
-##---------------------------------------------------------------------------------
-
-##---------------------------------------------------------------------------------
-## Spring Boot using MySQL
-##      - harbormaster/generate_devops_project:
-##           project-as-code-yaml-file: "src/examples/project.as.code/springboot-rdbms-project-as-code.yml"
-##---------------------------------------------------------------------------------
-
-##---------------------------------------------------------------------------------
-## Strus2 using Hibernate
-##      - harbormaster/generate_devops_project:
-##           project-as-code-yaml-file: "src/examples/project.as.code/stryts-rdbms-project-as-code.yml"
-##---------------------------------------------------------------------------------
-
-##---------------------------------------------------------------------------------
-# In order to deploy the generated Lambda functions, the key vars
-# (USER_AWS_ACCESSKEY and USER_AWS_SECRETKEY) are
-# read in as env vars for the current project.
-# Learn how to add these env vars at
-# https://circleci.com/docs/2.0/env-vars/#setting-an-environment-variable-in-a-project
-
-## AWS Lambda using MySQL
-##      - harbormaster/generate_devops_project:
-##           project-as-code-yaml-file: "src/examples/project.as.code/generate-lambdacore.yml"
-
-## AWS Lambda using MongoDB
-##      - harbormaster/generate_devops_project:
-##           project-as-code-yaml-file: "src/examples/project.as.code/generate-lambdanosql.yml"
-##---------------------------------------------------------------------------------
 
 workflows:
   version: 2
   project-generations-workflow:
     jobs:
-      - generate-devops-project
+      - harbormaster/generate-devops-project:
+          api-token: HARBORMASTER_API_TOKEN
+          project-as-code-yaml-file: "src/examples/project.as.code/angular-project-as-code.yml"
