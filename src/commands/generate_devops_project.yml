@@ -1,7 +1,7 @@
 ## Invokes a shell script to call Harbormaster to handle generating the DevOps project
 parameters:
   project-as-code-file:
-    description: "Your Harbormaster API token"
+    description: "A Project-as-Code YAML file to apply during DevOps project generation"
     type: string
 steps:
   - run:
