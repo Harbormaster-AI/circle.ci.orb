@@ -88,8 +88,6 @@ workflows:
           add-pr-comment: false
           fail-if-semver-not-indicated: true
           publish-version-tag: false
-          requires:
-            - testpack
           filters:
             branches:
               only:
