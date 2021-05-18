@@ -1,11 +1,11 @@
 ## Invokes a shell script to call Harbormaster to handle generating the DevOps project
 parameters:
-  project-as-code-file:
+  zip:
     description: "A Project-as-Code YAML file to apply during DevOps project generation"
     type: string
 steps:
   - run:
       name: Generating DevOps Project
       environment:
-        HARBORMASTER_PROJECT_AS_CODE_FILE: <<parameters.project-as-code-file>>
+        HARBORMASTER_PROJECT_AS_CODE_FILE: <<parameters.zip>>
       command: <<include(scripts/generate_devops_project.sh)>>
