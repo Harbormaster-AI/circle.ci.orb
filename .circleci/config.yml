@@ -26,19 +26,6 @@ executors:
     docker:
       - image: circleci/node:latest
 
-jobs:
-  generate-devops-project:
-
-    docker:
-      - image: 'circleci/node:latest'
-    steps:
-      - checkout:
-          path: "~/${CIRCLE_PROJECT_REPONAME}"
-      - harbormaster/initialize:
-          api-token: HARBORMASTER_API_TOKEN
-      - harbormaster/generate_devops_project:
-          project-as-code-yaml-file: "src/examples/project.as.code/angular-project-as-code.yml"
-
 workflows:
   # Prior to producing a development orb (which requires credentials) basic validation, linting, and even unit testing can be performed.
   # This workflow will run on every commit
