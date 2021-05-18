@@ -34,36 +34,36 @@ jobs:
 ##---------------------------------------------------------------------------------
 ## Angular11
       - harbormaster/generate_devops_project:
-          project-as-code-yaml-file: "samples/yamls/project.as.code/angular-project-as-code.yml"
+          project-as-code-yaml-file: "source/examples/project.as.code/angular-project-as-code.yml"
 
 ##---------------------------------------------------------------------------------
 ## Apollo GraphQL
 ##      - harbormaster/generate_devops_project:
-##           project-as-code-yaml-file: "samples/yamls/project.as.code/apollo-project-as-code.yml"
+##           project-as-code-yaml-file: "source/examples/project.as.code/apollo-project-as-code.yml"
 ##---------------------------------------------------------------------------------
 
 ##---------------------------------------------------------------------------------
 ## Django
 ##      - harbormaster/generate_devops_project:
-##           project-as-code-yaml-file: "samples/yamls/project.as.code/django-project-as-code.yml"
+##           project-as-code-yaml-file: "source/examples/project.as.code/django-project-as-code.yml"
 ##---------------------------------------------------------------------------------
 
 ##---------------------------------------------------------------------------------
 ## Go
 ##      - harbormaster/generate_devops_project:
-##           project-as-code-yaml-file: "samples/yamls/project.as.code/go-project-as-code.yml"
+##           project-as-code-yaml-file: "source/examples/project.as.code/go-project-as-code.yml"
 ##---------------------------------------------------------------------------------
 
 ##---------------------------------------------------------------------------------
 ## Spring Boot using MySQL
 ##      - harbormaster/generate_devops_project:
-##           project-as-code-yaml-file: "samples/yamls/project.as.code/springboot-rdbms-project-as-code.yml"
+##           project-as-code-yaml-file: "source/examples/project.as.code/springboot-rdbms-project-as-code.yml"
 ##---------------------------------------------------------------------------------
 
 ##---------------------------------------------------------------------------------
 ## Strus2 using Hibernate
 ##      - harbormaster/generate_devops_project:
-##           project-as-code-yaml-file: "samples/yamls/project.as.code/stryts-rdbms-project-as-code.yml"
+##           project-as-code-yaml-file: "source/examples/project.as.code/stryts-rdbms-project-as-code.yml"
 ##---------------------------------------------------------------------------------
 
 ##---------------------------------------------------------------------------------
@@ -75,11 +75,11 @@ jobs:
 
 ## AWS Lambda using MySQL
 ##      - harbormaster/generate_devops_project:
-##           project-as-code-yaml-file: "samples/yamls/project.as.code/generate-lambdacore.yml"
+##           project-as-code-yaml-file: "source/examples/project.as.code/generate-lambdacore.yml"
 
 ## AWS Lambda using MongoDB
 ##      - harbormaster/generate_devops_project:
-##           project-as-code-yaml-file: "samples/yamls/project.as.code/generate-lambdanosql.yml"
+##           project-as-code-yaml-file: "source/examples/project.as.code/generate-lambdanosql.yml"
 ##---------------------------------------------------------------------------------
 
 workflows:

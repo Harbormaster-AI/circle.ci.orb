@@ -87,9 +87,9 @@ project:
         # -----------------------------------------------------------------------------
         git:
             name: git_test # an arbitrary name, but for JFrog, this should be the name of the Git related integration
-            username: xxxxxxxxxxxxx
-            password: xxxxxxxxxxxxx
-            repository: xxxxxxxxxxxxx
+            username: complexmathguy
+            password: 00Corvette!!
+            repository: myap
             tag: latest
             host: bitbucket.org
 
