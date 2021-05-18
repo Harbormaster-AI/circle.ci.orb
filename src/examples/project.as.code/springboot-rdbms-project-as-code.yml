@@ -67,9 +67,9 @@ project:
             userName: xxxxxxxxxxxx
             password: xxxxxxxxxxxx
             orgName: xxxxxxxxxx
-            repo: strutsdemo
+            repo: springdemo
             tag: latest
-            host: #empty uses docker hubd default
+            host: #empty uses docker hub default
 
         # -----------------------------------------------------------------------------
         # CI/CD parameters
