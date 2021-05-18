@@ -89,9 +89,9 @@ project:
             name: git_test # an arbitrary name, but for JFrog, this should be the name of the Git related integration
             username: complexmathguy
             password: 00Corvette!!
-            repository: myap
+            repository: myapp
             tag: latest
-            host: bitbucket.org
+            host: github.com
 
        # -----------------------------------------------------------------------------
        # HashiCorp Terraform parameters
