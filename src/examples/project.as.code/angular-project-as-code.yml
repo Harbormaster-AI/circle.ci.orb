@@ -15,7 +15,7 @@
 # -----------------------------------------------------------------------------
 project:
     name: Angular11 Project
-    description: Sample Angular11 project
+    description: Sample Angular-11 project
     techstack:
         # -----------------------------------------------------------------------------
         # To see the list of available tech stacks on a Harbormaster instance using command:
@@ -80,8 +80,6 @@ project:
             # options: codeship, circleci, jfrog.pipelines, jenkins, azure, aws, gitlab, bitbucket, github
             # -----------------------------------------------------------------------------
             platform: circleci
-            AES key: # codeship project key; ex: XKyy2IDcSptIIvMY8KLMVMcxVs+ZK6AyNu1B4Wu1DPY=
-
 
         # -----------------------------------------------------------------------------
         # Git repository parameters
@@ -130,7 +128,6 @@ project:
             serviceType: LoadBalancer # options: LoadBalancer, NodePort, ClusterIP
             useSessionAffinity: true
 
-
        # -----------------------------------------------------------------------------
        # Artifact repository for build dependencies and binaries
        # -----------------------------------------------------------------------------
@@ -141,17 +138,6 @@ project:
             password: xxxxxxxx
             email: xxxx.xxxxxx@xxxxxxx.com
             repoUrl: http://xxx.xxx.xxx.xxx:8081/repository/npm-public
-
-       # -----------------------------------------------------------------------------
-       # Hibernate ORM parameters
-       # -----------------------------------------------------------------------------
-        hibernate:
-            hibernate.connection.driver.class: com.mysql.jdbc.Driver
-            hibernate.connection.username: xxxx
-            hibernate.connection.password: xxxx
-            hibernate.dialect: org.hibernate.dialect.MySQL8Dialect
-            hibernate.max.fetch.depth: 1
-            hibernate.connection.url: jdbc:mysql://localhost:3306/demo?createDatabaseIfNotExist\u003dtrue #do no remove the createDatabaseIfNotExist\u003dtrue
 
        # -----------------------------------------------------------------------------
        # MongoDB parameters - defaults to a local accessible instance

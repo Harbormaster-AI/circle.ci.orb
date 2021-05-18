@@ -11,7 +11,6 @@
 # repository and designate as public before
 #
 # Minimally, anywhere you see an xxx, replace with your relevant value
-#
 # -----------------------------------------------------------------------------
 project:
     name: Golang Demo
@@ -91,7 +90,7 @@ project:
             repository: go-demo
             tag: latest
             host: bitbucket.org
-            
+
        # -----------------------------------------------------------------------------
        # Artifact repository for build dependencies and binaries
        # -----------------------------------------------------------------------------
@@ -102,6 +101,7 @@ project:
             password: xxxxxxxx
             email: xxxx.xxxxxx@xxxxxxx.com
             repoUrl: http://xxx.xxx.xxx.xxx:8081/repository/npm-public
+
         # -----------------------------------------------------------------------------
         # Go parameters
         # -----------------------------------------------------------------------------
