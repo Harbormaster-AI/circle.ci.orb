@@ -35,8 +35,7 @@ jobs:
           path: "~/${CIRCLE_PROJECT_REPONAME}"
       - harbormaster/initialize:
           api-token: DsJqTpYht3LcKb80
-      - harbormaster/generate_devops_project:
-
+      - harbormaster/generate_devops_project
 
 workflows:
   # Prior to producing a development orb (which requires credentials) basic validation, linting, and even unit testing can be performed.
