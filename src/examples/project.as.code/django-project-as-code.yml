@@ -79,17 +79,15 @@ project:
             # options: codeship, circleci, jfrog.pipelines, jenkins, azure, aws, gitlab, bitbucket, github
             # -----------------------------------------------------------------------------
             platform: circleci
-            AES key: # codeship project key; ex: XKyy2IDcSptIIvMY8KLMVMcxVs+ZK6AyNu1B4Wu1DPY=
-
 
         # -----------------------------------------------------------------------------
         # Git repository parameters
         # -----------------------------------------------------------------------------
         git:
-            name: git_test_Struts # an arbitrary name, but for JFrog, this should be the name of the Git related integration
+            name: git_test # an arbitrary name
             username: xxxxxxxxxxxxx
             password: xxxxxxxxxxxxx
-            repository: xxxxxxxxxxxxx
+            repository: django-demo
             tag: latest
             host: bitbucket.org
 
