@@ -61,7 +61,7 @@ workflows:
     when: << pipeline.parameters.run-integration-tests >>
     jobs:
       # Run any integration tests defined within the `jobs` key.
-      - harbormaster/generate-devops-project:
+      - projectgenerator/generate-devops-project:
           api-token: HARBORMASTER_API_TOKEN
           project-as-code-yaml-file: "src/examples/project.as.code/angular-project-as-code.yml"
           
