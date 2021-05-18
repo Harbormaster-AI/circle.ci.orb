@@ -1,4 +1,5 @@
-## Invokes a shell script to call Harbormaster to handle generating the DevOps project
+description: Invokes a shell script to call Harbormaster to handle generating the DevOps project using the provide Project-as-Code YAML file
+
 parameters:
   project-as-code-yaml-file:
     description: "A Project-as-Code YAML file to apply during DevOps project generation"
