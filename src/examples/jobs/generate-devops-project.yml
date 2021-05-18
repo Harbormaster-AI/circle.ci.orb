@@ -1,5 +1,7 @@
 description: |
- Initialization and usage of the Harbormaster project generator Orb.
+  Initialization and usage of the Harbormaster project generator Orb.
+  
+  api-token - 
   
   Register at platform.harbormaster.ai to get your own API token and assign a
   Personal Git Access Token to ensure uninterrupted secure Git commits by Harbormaster
@@ -9,18 +11,47 @@ description: |
 
   See https://circleci.com/docs/2.0/env-vars/
   for more details on assigning an environment variable.
+  
+  project-as-code-yaml-file - 
+  
+  A Project-as-Code YAML file to apply during DevOps project generation.
+  
+  See example project-as-code files at 
+  - https://github.com/Harbormaster-AI/circle.ci.orb/tree/main/src/examples/project.as.code
 
+docker:
+  - image: 'circleci/node:latest'
 
- docker:
-   - image: 'circleci/node:latest'
+parameters:
+ 
+  api-token:
+    description: |
+      Register at platform.harbormaster.ai to get your own API token and assign a
+      Personal Git Access Token to ensure uninterrupted secure Git commits by Harbormaster
+
+      Next, create an environmental variable on CircleCI, assign it your Harbormaster
+      API token, and finally apply the variable name here.
+
+      See https://circleci.com/docs/2.0/env-vars/
+      for more details on assigning an environment variable.
+    type: env_var_name
+    default: HARBORMASTER_API_TOKEN
+
+  project-as-code-yaml-file:
+    description: |
+      A Project-as-Code YAML file to apply during DevOps project generation.
+
+      See example project-as-code files at
+        - https://github.com/Harbormaster-AI/circle.ci.orb/tree/main/src/examples/project.as.code
+    type: string
+
+steps:
    
- steps:
+  - checkout:
+      path: "~/${CIRCLE_PROJECT_REPONAME}"
    
-   - checkout:
-       path: "~/${CIRCLE_PROJECT_REPONAME}"
-   
-   - harbormaster/initialize:
-       api-token: <<parameters.api-token>>  
+  - harbormaster/initialize:
+      api-token: <<parameters.api-token>>  
        
-   - harbormaster/generate_devops_project:
-       project-as-code-yaml-file: <<parameters.project-as-code-yaml-file>>
+  - harbormaster/generate_devops_project:
+      project-as-code-yaml-file: <<parameters.project-as-code-yaml-file>>
