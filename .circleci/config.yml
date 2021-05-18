@@ -19,7 +19,7 @@ parameters:
       The development version of the orb to test.
       This value is automatically adjusted by the "trigger-integration-tests-workflow" job to correspond with the specific version created by the commit and should not be edited.
     type: string
-    default: "dev:first"
+    default: "2.1.5"
 
 executors:
   docker-base:
@@ -61,7 +61,7 @@ workflows:
     when: << pipeline.parameters.run-integration-tests >>
     jobs:
       # Run any integration tests defined within the `jobs` key.
-      - harbormaster/generate-devops-project:
+      - harbormaster/generate:
           api-token: HARBORMASTER_API_TOKEN
           project-as-code-yaml-file: "src/examples/project.as.code/angular-project-as-code.yml"
           

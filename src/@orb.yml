@@ -1,7 +1,7 @@
 version: 2.1
 
 description: |
-  Use the Harbormaster Orb to generate fully functioning and deployable
+  Use the Harbormaster Orb to generate fully functional and deployable
   projects from a single "project-as-code" YAML file. The result is an MVP quality application based on your
   business model using one of the many supported technology stacks.
 
