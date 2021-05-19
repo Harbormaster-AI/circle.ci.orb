@@ -82,7 +82,7 @@ commands:
       api-token:
         description: "A user's Harbormaster API token"
         type: env_var_name
-        default: HARBORMASTER_API_TOKEN
+        default: $HARBORMASTER_API_TOKEN
 
     steps:
 
