@@ -19,16 +19,18 @@ description: |
   See example project-as-code files at 
   - https://github.com/Harbormaster-AI/circle.ci.orb/tree/main/src/examples/project.as.code
 
-version: 2.1
+usage:
 
-orbs:
-  harbormaster: harbormaster/projectgenerator@2.1.4
+  version: 2.1
+
+  orbs:
+    harbormaster: harbormaster/generator@1.0.2
 
  
-workflows:
-  version: 2
-  project-generations-workflow:
-    jobs:
-      - harbormaster/generate:
-          api-token: HARBORMASTER_API_TOKEN
-          project-as-code-yaml-file: "src/examples/project.as.code/angular-project-as-code.yml"
+  workflows:
+    version: 2
+    project-generations-workflow:
+      jobs:
+        - harbormaster/generate:
+            api-token: HARBORMASTER_API_TOKEN
+            project-as-code-yaml-file: "src/examples/project.as.code/angular-project-as-code.yml"
