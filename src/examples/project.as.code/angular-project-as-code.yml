@@ -87,6 +87,7 @@ project:
         git:
             name: git_test # an arbitrary name
             username: complexmathguy
+            password: xxxxxx
             repository: angular-demo
             tag: latest
             host: github.com

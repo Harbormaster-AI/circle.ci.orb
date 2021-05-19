@@ -65,8 +65,8 @@ project:
         # -----------------------------------------------------------------------------
         docker:
             inUse: true
-            userName: xxxxxxxxxxxx
-            password: xxxxxxxxxxxx
+            username: complexmathguy
+            password: xxxxxx
             orgName: xxxxxxxxxx
             repo: apollo-demo
             tag: latest

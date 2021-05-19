@@ -85,8 +85,8 @@ project:
         # -----------------------------------------------------------------------------
         git:
             name: git_test # an arbitrary name
-            username: xxxxxxxxxxxxx
-            password: xxxxxxxxxxxxx
+            username: complexmathguy
+            password: xxxxxx
             repository: go-demo
             tag: latest
             host: bitbucket.org
