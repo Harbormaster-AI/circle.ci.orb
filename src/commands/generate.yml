@@ -23,6 +23,6 @@ steps:
   - run:
       name: Harbormaster project generation
       environment:
-        USER_HARBORMASTER_API_TOKEN: <<parameters.api-token>>
+        HARBORMASTER_API_TOKEN: <<parameters.api-token>>
         HARBORMASTER_PROJECT_AS_CODE_YAML_FILE: <<parameters.project-as-code-yaml-file>>
       command: <<include(scripts/generate.sh)>>
