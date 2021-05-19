@@ -2,7 +2,7 @@ version: 2.1
 
 orbs:
   # Replace this with your own!
-  harbormaster: harbormaster/generator@1.0.2
+  harbormaster: harbormaster/generator@1.0.3
   orb-tools: circleci/orb-tools@10.0
   shellcheck: circleci/shellcheck@2.0
 #--------------------------------------------------------------------------------
