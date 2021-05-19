@@ -68,7 +68,7 @@ commands:
           name: Harbormaster initialization
           environment:
             USER_HARBORMASTER_API_TOKEN: <<parameters.api-token>>
-          command: sh  ./scripts/initialize.sh
+          command: sh  ./src/scripts/initialize.sh
 
   generate_devops_project:
     parameters:
@@ -80,4 +80,4 @@ commands:
           name: Generating DevOps Project
           environment:
             HARBORMASTER_PROJECT_AS_CODE_YAML_FILE: <<parameters.project-as-code-yaml-file>>
-          command: sh  ./scripts/generate_devops_project.sh
+          command: sh  ./src/scripts/generate_devops_project.sh
