@@ -4,11 +4,11 @@ description: |
 
   Say goodbye to Hello World!
 
-  The Harbormaster Orb is a simple, yet powerful way to leverage CircleCI to automate the generation of DevOps projects to produce fully 
-  functional applications that can be deployed to, tested, and run through your CircleCI pipeline. It includes generating the CircleCI config.yml 
+  The Harbormaster Orb is a simple, yet powerful way to leverage CircleCI to automate the generation of DevOps projects to produce fully
+  functional applications that can be deployed to, tested, and run through your CircleCI pipeline. It includes generating the CircleCI config.yml
   necessary to execute a pipeline.
 
-  To get started, Register at platform.harbormaster.ai to get your own API token and assign a Personal Git Access Token to ensure uninterrupted 
+  To get started, Register at platform.harbormaster.ai to get your own API token and assign a Personal Git Access Token to ensure uninterrupted
   secure Git commits by Harbormaster
 
   Next, create an environmental variable named HARBORMASTER_API_TOKEN on CircleCI and assign it your Harbormaster API token.
