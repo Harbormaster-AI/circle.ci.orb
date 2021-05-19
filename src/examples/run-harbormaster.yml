@@ -12,11 +12,11 @@ description: |
   See https://circleci.com/docs/2.0/env-vars/
   for more details on assigning an environment variable.
 
-  project-as-code-yaml-file - 
+  project-as-code-yaml-file -
 
   A Project-as-Code YAML file to apply during DevOps project generation.
 
-  See example project-as-code files at 
+  See example project-as-code files at
   - https://github.com/Harbormaster-AI/circle.ci.orb/tree/main/src/examples/project.as.code
 
 usage:

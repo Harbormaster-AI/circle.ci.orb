@@ -51,7 +51,7 @@ jobs:
           path: "~/${CIRCLE_PROJECT_REPONAME}"
 
       - initialize:
-          api-token: <<parameters.api-token>>  
+          api-token: <<parameters.api-token>>
 
       - generate_devops_project:
           project-as-code-yaml-file: <<parameters.project-as-code-yaml-file>>
@@ -67,10 +67,10 @@ commands:
       - run:
           name: Harbormaster initialization
           environment:
-            USER_HARBORMASTER_API_TOKEN: <<parameters.api-token>> 
+            USER_HARBORMASTER_API_TOKEN: <<parameters.api-token>>
           command: echo initialize
 
-  generate_devops_project: 
+  generate_devops_project:
     parameters:
       project-as-code-yaml-file:
         description: "A Project-as-Code YAML file to apply during DevOps project generation"
@@ -80,4 +80,4 @@ commands:
           name: Generating DevOps Project
           environment:
             HARBORMASTER_PROJECT_AS_CODE_YAML_FILE: <<parameters.project-as-code-yaml-file>>
-          command: echo generate_devops_project
+          command: echo generate_devops_project'
