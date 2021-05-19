@@ -18,14 +18,13 @@ description: |
   
   See example project-as-code files at 
   - https://github.com/Harbormaster-AI/circle.ci.orb/tree/main/src/examples/project.as.code
-  
-usage:
-  version: 2.1
+
+version: 2.1
 
 orbs:
   harbormaster: harbormaster/projectgenerator@2.1.4
 
-
+ 
 workflows:
   version: 2
   project-generations-workflow:
