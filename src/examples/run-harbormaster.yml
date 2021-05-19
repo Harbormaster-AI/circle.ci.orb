@@ -24,7 +24,7 @@ usage:
   version: 2.1
 
   orbs:
-    harbormaster: harbormaster/projectgenerator@2.1.6
+    harbormaster: harbormaster/projectgenerator@2.1.7
 
   workflows:
     version: 2
