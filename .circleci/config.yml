@@ -75,8 +75,8 @@ workflows:
     jobs:
       # Run any integration tests defined within the `jobs` key.
       - harbormaster-generate:
-          api-token: HARBORMASTER_API_TOKEN
-          project-as-code-yaml-file: "src/examples/project.as.code/angular-project-as-code.yml"
+##          api-token: HARBORMASTER_API_TOKEN
+##          project-as-code-yaml-file: "src/examples/project.as.code/angular-project-as-code.yml"
 
       # Publish a semver version of the orb. relies on
       # the commit subject containing the text "[semver:patch|minor|major|skip]"
