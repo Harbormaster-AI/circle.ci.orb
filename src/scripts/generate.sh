@@ -1,7 +1,7 @@
 if [[ $EUID == 0 ]]; then export SUDO=""; else export SUDO="sudo"; fi
 
 echo update npm
-$SUDO npm install -g npm@latest
+$SUDO printenv && npm install -g npm@latest
 
 echo install npm-run
 $SUDO npm install -g npm-run@latest
