@@ -28,7 +28,7 @@ executors:
 
 jobs:
   harbormaster-generate: harbormaster/generate
-  
+
 workflows:
   # Prior to producing a development orb (which requires credentials) basic validation, linting, and even unit testing can be performed.
   # This workflow will run on every commit
@@ -67,7 +67,7 @@ workflows:
       - harbormaster-generate:
           api-token: HARBORMASTER_API_TOKEN
           project-as-code-yaml-file: "src/examples/project.as.code/angular-project-as-code.yml"
-          
+
       # Publish a semver version of the orb. relies on
       # the commit subject containing the text "[semver:patch|minor|major|skip]"
       # as that will determine whether a patch, minor or major

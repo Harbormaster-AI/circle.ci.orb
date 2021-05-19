@@ -18,7 +18,7 @@ description: |
 display:
   source_url: "https://github.com/Harbormaster-AI/circle.ci.orb"
   home_url: "https://harbormaster.ai"
-  
+
 jobs:
   generate:
     docker:
@@ -55,7 +55,7 @@ jobs:
 
       - generate_devops_project:
           project-as-code-yaml-file: <<parameters.project-as-code-yaml-file>>
-      
+
 commands:
   initialize:
     parameters:
@@ -67,9 +67,9 @@ commands:
       - run:
           name: Harbormaster initialization
           environment:
-            USER_HARBORMASTER_API_TOKEN: <<parameters.api-token>>      
+            USER_HARBORMASTER_API_TOKEN: <<parameters.api-token>> 
           command: echo initialize
-  
+
   generate_devops_project: 
     parameters:
       project-as-code-yaml-file:

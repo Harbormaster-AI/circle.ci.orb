@@ -1,13 +1,13 @@
 description: |
-  Command to initialize the Harbormaster orb by providing your Harbormaster API token. 
-  
-  This token is obtained from your online account under User Preferences on http://platform.harbormaster.com. 
-  
+  Command to initialize the Harbormaster orb by providing your Harbormaster API token.
+
+  This token is obtained from your online account under User Preferences on http://platform.harbormaster.com.
+
   Assign this token as an environment variable on CircleCI.
-  
+
   See https://circleci.com/docs/2.0/env-vars/
   for more details on assigning an environment variable.
-  
+
 parameters:
   api-token:
     description: "Your Harbormaster API token"
@@ -17,5 +17,5 @@ steps:
   - run:
       name: Harbormaster initialization
       environment:
-        USER_HARBORMASTER_API_TOKEN: <<parameters.api-token>>      
+        USER_HARBORMASTER_API_TOKEN: <<parameters.api-token>>
       command: <<include(scripts/initialize.sh)>>
