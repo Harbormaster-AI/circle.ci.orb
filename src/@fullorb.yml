@@ -67,7 +67,7 @@ commands:
   generate_devops_project:
 
     description: |
-      Command to initialize the Harbormaster orb by providing your Harbormaster API token.
+      Command to initialize the Harbormaster orb by providing your Harbormaster API token then generate the project
 
       This token is obtained from your online account under User Preferences on http://platform.harbormaster.com.
 
