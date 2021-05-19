@@ -98,12 +98,12 @@ commands:
           command: '[ $EUID == 0 ] && SUDO="" || SUDO=sudo && $SUDO npm install -g npm-run@latest'
 
       - run:
-          name: install realmethods CLI
-          command: '[ $EUID == 0 ] && SUDO="" || SUDO=sudo && $SUDO npm install -g realmethods_cli'
+          name: install Harbormaster CLI
+          command: '[ $EUID == 0 ] && SUDO="" || SUDO=sudo && $SUDO npm install -g harbormaster-ai'
 
       - run:
-          name: initialize user for realmethods CLI
-          command: '[ $EUID == 0 ] && SUDO="" || SUDO=sudo && $SUDO npm-run realmethods_cli init << parameters.api-token >>'
+          name: initialize user for Harbormaster
+          command: '[ $EUID == 0 ] && SUDO="" || SUDO=sudo && $SUDO npm-run harbormaster init << parameters.api-token >>'
 
       - run:
           name: update the apt-get package index
@@ -127,4 +127,4 @@ commands:
     steps:
       - run:
           name: Generating application
-          command: '[ $EUID == 0 ] && SUDO="" || SUDO=sudo && $SUDO realmethods_cli app_generate ~/${CIRCLE_PROJECT_REPONAME}/<< parameters.project-as-code-yaml-file >>'
+          command: '[ $EUID == 0 ] && SUDO="" || SUDO=sudo && $SUDO harbormaster project_generate ~/${CIRCLE_PROJECT_REPONAME}/<< parameters.project-as-code-yaml-file >>'
