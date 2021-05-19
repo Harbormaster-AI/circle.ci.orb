@@ -113,7 +113,7 @@ commands:
       - run:
           name: install dos2unix to convert uploaded files
           command: '[ $EUID == 0 ] && SUDO="" || SUDO=sudo && $SUDO apt-get install -y dos2unix'
-          
+
       - run:
           name: Generating application
           command: '[ $EUID == 0 ] && SUDO="" || SUDO=sudo && $SUDO harbormaster project_generate ~/${CIRCLE_PROJECT_REPONAME}/<< parameters.project-as-code-yaml-file >>'
