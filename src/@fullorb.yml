@@ -43,25 +43,25 @@ jobs:
 
       See example project-as-code files at
       - https://github.com/Harbormaster-AI/circle.ci.orb/tree/main/src/examples/project.as.code
-    
+
     docker:
       - image: 'circleci/node:latest'
 
     parameters:
-    
+
       api-token:
         description: "Your Harbormaster API token"
         type: env_var_name
 
       project-as-code-yaml-file:
         description: "A Project-as-Code YAML file to apply during DevOps project generation"
-        type: string        
+        type: string
 
     steps:
       - initialize:
           api-token: <<parameters.api-token>>
 
-      - generate_devops_project: 
+      - generate_devops_project:
           project-as-code-yaml-file: <<parameters.project-as-code-yaml-file>>
 
 commands:
@@ -89,27 +89,27 @@ commands:
       - checkout:
           path: "~/${CIRCLE_PROJECT_REPONAME}"
 
-      - run:                                                    
+      - run:
           name: update npm
-          command: '[ $EUID == 0 ] && SUDO="" || SUDO=sudo && $SUDO npm install -g npm@latest' 
+          command: '[ $EUID == 0 ] && SUDO="" || SUDO=sudo && $SUDO npm install -g npm@latest'
 
-      - run:                                                    
+      - run:
           name: install npm-run
-          command: '[ $EUID == 0 ] && SUDO="" || SUDO=sudo && $SUDO npm install -g npm-run@latest'    
+          command: '[ $EUID == 0 ] && SUDO="" || SUDO=sudo && $SUDO npm install -g npm-run@latest'
 
-      - run:                                 
+      - run:
           name: install realmethods CLI
           command: '[ $EUID == 0 ] && SUDO="" || SUDO=sudo && $SUDO npm install -g realmethods_cli'
 
       - run:
-          name: initialize user for realmethods CLI 
+          name: initialize user for realmethods CLI
           command: '[ $EUID == 0 ] && SUDO="" || SUDO=sudo && $SUDO npm-run realmethods_cli init << parameters.api-token >>'
 
-      - run: 
+      - run:
           name: update the apt-get package index
           command: '[ $EUID == 0 ] && SUDO="" || SUDO=sudo && $SUDO apt-get update'
 
-      - run: 
+      - run:
           name: install dos2unix to convert uploaded files
           command: '[ $EUID == 0 ] && SUDO="" || SUDO=sudo && $SUDO apt-get install -y dos2unix'
 
@@ -123,7 +123,7 @@ commands:
         description: "Project-as-Code YAML file containing the project/application generation directives"
         type: string
         default: "${GENERATION_YAML_FILE}"
-        
+
     steps:
       - run:
           name: Generating application
