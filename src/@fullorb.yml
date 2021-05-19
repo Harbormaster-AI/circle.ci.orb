@@ -58,15 +58,12 @@ jobs:
         type: string
 
     steps:
-      - initialize:
-          api-token: <<parameters.api-token>>
-
       - generate_devops_project:
           project-as-code-yaml-file: <<parameters.project-as-code-yaml-file>>
 
 commands:
 
-  initialize:
+  generate_devops_project:
 
     description: |
       Command to initialize the Harbormaster orb by providing your Harbormaster API token.
@@ -83,6 +80,10 @@ commands:
         description: "A user's Harbormaster API token"
         type: env_var_name
         default: HARBORMASTER_API_TOKEN
+
+      project-as-code-yaml-file:
+        description: "A Project-as-Code YAML file to apply during DevOps project generation"
+        type: string
 
     steps:
 
@@ -112,19 +113,7 @@ commands:
       - run:
           name: install dos2unix to convert uploaded files
           command: '[ $EUID == 0 ] && SUDO="" || SUDO=sudo && $SUDO apt-get install -y dos2unix'
-
-  generate_devops_project:
-
-    description: |
-      Command to generate an DevOps project by providing a generation Project-as-Code YAML file
-
-    parameters:
-      project-as-code-yaml-file:
-        description: "Project-as-Code YAML file containing the project/application generation directives"
-        type: string
-        default: "${GENERATION_YAML_FILE}"
-
-    steps:
+          
       - run:
           name: Generating application
           command: '[ $EUID == 0 ] && SUDO="" || SUDO=sudo && $SUDO harbormaster project_generate ~/${CIRCLE_PROJECT_REPONAME}/<< parameters.project-as-code-yaml-file >>'
