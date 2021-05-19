@@ -19,6 +19,6 @@ echo install dos2unix to convert uploaded files
 $SUDO apt-get install -y dos2unix
 
 echo Generating DevOps Project
-$SUDO harbormaster project_generate ~/"$CIRCLE_PROJECT_REPONAME"/"$HARBORMASTER_PROJECT_AS_CODE_YAML_FILE"
+$SUDO npm-run harbormaster project_generate ~/"$CIRCLE_PROJECT_REPONAME"/"$HARBORMASTER_PROJECT_AS_CODE_YAML_FILE"
 
 
