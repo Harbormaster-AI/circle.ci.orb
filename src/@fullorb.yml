@@ -82,7 +82,7 @@ commands:
       api-token:
         description: "A user's Harbormaster API token"
         type: env_var_name
-        default: $HARBORMASTER_API_TOKEN
+        default: HARBORMASTER_API_TOKEN
 
     steps:
 
@@ -103,7 +103,9 @@ commands:
 
       - run:
           name: initialize user for Harbormaster
-          command: '[ $EUID == 0 ] && SUDO="" || SUDO=sudo && $SUDO npm-run harbormaster init << parameters.api-token >>'
+          environment:
+            USER_HARBORMASTER_API_TOKEN: <<parameters.api-token>>
+          command: '[ $EUID == 0 ] && SUDO="" || SUDO=sudo && $SUDO npm-run harbormaster init $USER_HARBORMASTER_API_TOKEN'
 
       - run:
           name: update the apt-get package index
