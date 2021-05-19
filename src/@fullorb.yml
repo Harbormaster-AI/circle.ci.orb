@@ -59,6 +59,7 @@ jobs:
 
     steps:
       - generate_devops_project:
+          api-token: <<parameters.api-token>>
           project-as-code-yaml-file: <<parameters.project-as-code-yaml-file>>
 
 commands:
