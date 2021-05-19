@@ -18,7 +18,7 @@ parameters:
   project-as-code-yaml-file:
     description: "A Project-as-Code YAML file to apply during DevOps project generation"
     type: string
-        
+
   steps:
     - run:
         name: Harbormaster project generation

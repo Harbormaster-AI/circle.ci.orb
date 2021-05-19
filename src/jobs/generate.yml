@@ -50,8 +50,6 @@ steps:
   - checkout:
       path: "~/${CIRCLE_PROJECT_REPONAME}"
 
-  - initialize:
-      api-token: <<parameters.api-token>>
-
-  - generate_devops_project:
-      project-as-code-yaml-file: <<parameters.project-as-code-yaml-file>>
+  - generate:
+     api-token: <<parameters.api-token>>
+     project-as-code-yaml-file: <<parameters.project-as-code-yaml-file>>
