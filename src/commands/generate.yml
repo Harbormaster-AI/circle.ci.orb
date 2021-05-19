@@ -3,10 +3,10 @@ description: |
 
   This token is obtained from your online account under User Preferences on http://platform.harbormaster.com.
 
-  Assign this token as an environment variable on CircleCI.
+  Next, create an environmental variable named HARBORMASTER_API_TOKEN on CircleCI and assign it your Harbormaster
+  API token.
 
-  See https://circleci.com/docs/2.0/env-vars/
-  for more details on assigning an environment variable.
+  See https://circleci.com/docs/2.0/env-vars/ or more details on assigning an environment variable.
 
 parameters:
 
