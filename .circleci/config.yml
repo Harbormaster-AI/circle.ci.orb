@@ -26,6 +26,9 @@ executors:
     docker:
       - image: circleci/node:latest
 
+jobs:
+  harbormaster-generate: harbormaster/generate
+  
 workflows:
   # Prior to producing a development orb (which requires credentials) basic validation, linting, and even unit testing can be performed.
   # This workflow will run on every commit
@@ -61,7 +64,7 @@ workflows:
     when: << pipeline.parameters.run-integration-tests >>
     jobs:
       # Run any integration tests defined within the `jobs` key.
-      - harbormaster/generate:
+      - harbormaster-generate:
           api-token: HARBORMASTER_API_TOKEN
           project-as-code-yaml-file: "src/examples/project.as.code/angular-project-as-code.yml"
           
