@@ -103,9 +103,7 @@ commands:
 
       - run:
           name: initialize user for Harbormaster
-          environment:
-            USER_HARBORMASTER_API_TOKEN: <<parameters.api-token>>
-          command: '[ $EUID == 0 ] && SUDO="" || SUDO=sudo && $SUDO npm-run harbormaster init $HARBORMASTER_API_TOKEN'
+          command: '[ $EUID == 0 ] && SUDO="" || SUDO=sudo && $SUDO npm-run harbormaster init $<<parameters.api-token>>'
 
       - run:
           name: update the apt-get package index
