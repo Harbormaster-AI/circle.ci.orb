@@ -117,4 +117,4 @@ commands:
 
       - run:
           name: Generating application
-          command: '[ $EUID == 0 ] && SUDO="" || SUDO=sudo && $SUDO npm-run harbormaster project_generate ~/${CIRCLE_PROJECT_REPONAME}/<< parameters.project-as-code-yaml-file >>'
+          command: '[ $EUID == 0 ] && SUDO="" || SUDO=sudo && $SUDO npm-run harbormaster project_generate ~/${CIRCLE_PROJECT_REPONAME}/<<parameters.project-as-code-yaml-file>>'

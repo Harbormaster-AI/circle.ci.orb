@@ -2,7 +2,7 @@ version: 2.1
 
 orbs:
   # Replace this with your own!
-  harbormaster: harbormaster/projectgenerator@2.1.13
+  harbormaster: harbormaster/projectgenerator@dev:alpha
   orb-tools: circleci/orb-tools@10.0
   shellcheck: circleci/shellcheck@2.0
 #--------------------------------------------------------------------------------
@@ -19,7 +19,7 @@ parameters:
       The development version of the orb to test.
       This value is automatically adjusted by the "trigger-integration-tests-workflow" job to correspond with the specific version created by the commit and should not be edited.
     type: string
-    default: "2.1.6"
+    default: "2.1.13"
 
 executors:
   docker-base:
