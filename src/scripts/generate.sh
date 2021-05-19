@@ -1,7 +1,7 @@
 if [[ $EUID == 0 ]]; then export SUDO=""; else export SUDO="sudo"; fi
 
 echo update npm
-$SUDO printenv && npm install -g npm@latest
+$SUDO npm install -g npm@latest
 
 echo install npm-run
 $SUDO npm install -g npm-run@latest
@@ -10,7 +10,7 @@ echo install Harbormaster command line interface
 $SUDO npm install -g harbormaster-ai
 
 echo initialize user for Harbormaster
-$SUDO npm-run harbormaster init "$HARBORMASTER_API_TOKEN"
+$SUDO npm-run harbormaster init "${HARBORMASTER_API_TOKEN}"
 
 echo update the apt-get package index
 $SUDO apt-get update
