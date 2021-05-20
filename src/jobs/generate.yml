@@ -1,24 +1,6 @@
 description: |
-  Initialization and usage of the Harbormaster project generator Orb.
-
-  api-token -
-
-  Register at platform.harbormaster.ai to get your own API token and assign a
-  Personal Git Access Token to ensure uninterrupted secure Git commits by Harbormaster
-
-  Next, create an environmental variable on CircleCI, assign it your Harbormaster
-  API token, and finally apply the variable name here.
-
-  See https://circleci.com/docs/2.0/env-vars/
-  for more details on assigning an environment variable.
-
-  project-as-code-yaml-file -
-
-  A Project-as-Code YAML file to apply during DevOps project generation.
-
-  See example project-as-code files at
-  - https://github.com/Harbormaster-AI/circle.ci.orb/tree/main/src/examples/project.as.code
-
+  Job used to invoke the command to generate a DevOps project using a Harbormaster API token and Project-as-Code YAML file.
+  
 docker:
   - image: 'circleci/node:latest'
 

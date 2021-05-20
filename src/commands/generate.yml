@@ -1,13 +1,6 @@
 description: |
-  Command to initialize the Harbormaster orb by providing your Harbormaster API token.
-
-  This token is obtained from your online account under User Preferences on http://platform.harbormaster.com.
-
-  Next, create an environmental variable named HARBORMASTER_API_TOKEN on CircleCI and assign it your Harbormaster
-  API token.
-
-  See https://circleci.com/docs/2.0/env-vars/ or more details on assigning an environment variable.
-
+  Command to generate a DevOps project using the provided Project-as-Code YAML file via arg.
+  
 parameters:
 
   api-token:
