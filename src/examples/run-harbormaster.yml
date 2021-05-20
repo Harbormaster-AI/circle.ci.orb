@@ -23,11 +23,12 @@ usage:
   version: 2.1
 
   orbs:
-    harbormaster: harbormaster/projectgenerator@dev:alpha
+    harbormaster: harbormaster/projectgenerator@3.0.1
 
   workflows:
-    version: 2
+
     project-generations-workflow:
+
       jobs:
         - harbormaster/generate:
             project-as-code-yaml-file: "src/examples/project.as.code/angular-project-as-code.yml"
