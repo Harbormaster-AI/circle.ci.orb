@@ -1,6 +1,6 @@
 description: |
   Command to generate a DevOps project using the provided Project-as-Code YAML file via arg.
-  
+
 parameters:
 
   api-token:

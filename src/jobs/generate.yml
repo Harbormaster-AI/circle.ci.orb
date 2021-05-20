@@ -1,6 +1,6 @@
 description: |
   Job used to invoke the command to generate a DevOps project using a Harbormaster API token and Project-as-Code YAML file.
-  
+
 docker:
   - image: 'circleci/node:latest'
 
