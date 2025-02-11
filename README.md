@@ -1,9 +1,8 @@
-# Harbormaster CircleCI Orb - DevOps Project Generator
+# Harbormaster CircleCI Orb : AI-Geneative Project Creation
 
 ![alt text](http://harbormaster.ai/wp-content/uploads/2021/03/captain_harbormaster-e1617238219491.png)
 
 **Say goodbye to Hello World!**
-
 
 The Harbormaster Orb is a simple, yet powerful way to leverage CircleCI to automate the generation of DevOps projects to produce fully functional applications that can be deployed to, tested, and run through your CircleCI pipeline. It includes generating the CircleCI config.yml necessary to execute a pipeline.
 
