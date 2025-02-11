@@ -1,4 +1,5 @@
-# Harbormaster CircleCI Orb : AI-Geneative Project Creation
+# Harbormaster CircleCI Orb
+AI-Geneative Project Creation
 
 ![alt text](http://harbormaster.ai/wp-content/uploads/2021/03/captain_harbormaster-e1617238219491.png)
 
